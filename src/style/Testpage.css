@@ -20,6 +20,16 @@ html{
         }
 }
 
+button{
+    background: inherit;
+    border:none;
+    box-shadow:none;
+    border-radius:0;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
 @media ( max-width: 900px ) {
     #main_contents .wrapper {
         /*background-color: rebeccapurple;*/
@@ -98,10 +108,9 @@ body{
     /*align-items: center;*/
 }
 .answers_wrap {
-    /*border-radius: 1em;*/
     box-shadow: 3px 3px 7px 1px #2b2929;
     max-width: 323px;
-    padding: 40px 0;
+    padding: 0px 10px;
     height: 4em;
     line-height: 1em;
 

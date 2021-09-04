@@ -1,5 +1,6 @@
 import poster from "../슬의.png";
 import "../style/Result.css"
+import { Link } from "react-router-dom";
 
 const ResultPage = () => {
 
@@ -26,7 +27,9 @@ const ResultPage = () => {
                     </div>
                 </div>
                 <div className="bottom-result">
-                    <button className="result-button" type="button">테스트 다시하기</button>
+                    <Link to="/">
+                        <button className="result-button" type="button">테스트 다시하기</button>
+                    </Link>
                     <div id="sns-buttons">
                         <button className="sns-button" type="button">
                             카카오
