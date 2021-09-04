@@ -14,15 +14,6 @@ const QuestionArea = () => {
     }, [resetIdx])
     const currentQuestion = useRecoilValue(initQuestionList(idx))
 
-    // const getInitQuestions = async () => {
-    //     const response = await axios.get("http://localhost:4000/hospital") // http 쓰지 않으면 cors 에러 난다.
-    //     const data = response.data
-    //     setQuestions(data)
-    // }
-    // useEffect(() => {
-        // getInitQuestions();
-    // }, [init]);
-
     useEffect(() => {
     }, [idx])
 
@@ -69,46 +60,44 @@ const QuestionArea = () => {
     return (
         <div className="test-bottom">
             <div className="question-container">
-                {/*Q. {currQuestion && currQuestion[idx].title}*/}
                 {currentQuestion['title']}
             </div>
             <div className="answers">
-                <div className="answers_wrap"
-                     onClick={(e) => ToNextStep(e,
-                         // currQuestion && currQuestion[idx].answerAType
-                         currentQuestion['answerAType']
-                     )
-                     }>
-                    {
-                        idx < 11
-                            ?
-                            // (currQuestion && currQuestion[idx].answerA)
-                            currentQuestion['answerA']
-                            :
-                            (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
-                                {/*{currQuestion && currQuestion[idx].answerA}*/}
-                                {currentQuestion['answerA']}
-                            </Link>)
-                    }
-                </div>
-                <div className="answers_wrap"
-                     onClick={(e) => ToNextStep(e,
-                         // currQuestion && currQuestion[idx].answerBType
-                         currentQuestion['answerBType']
-                     )
-                     }>
-                    {
-                        idx < 11
-                            ?
-                            // (currQuestion && currQuestion[idx].answerB)
-                            currentQuestion['answerB']
-                            :
-                            (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
-                                {/*{currQuestion && currQuestion[idx].answerB}*/}
+                {
+                    idx < 11 ? (
+                        <button className="answers_wrap"
+                                onClick={(e) => ToNextStep(e, currentQuestion['answerAType'])}
+                        >
+                            {currentQuestion['answerA']}
+                        </button>
+                    ) : (
+                        (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
+                            <button className="answers_wrap"
+                                    onClick={(e) => ToNextStep(e, currentQuestion['answerAType'])}
+                            >
+                            {currentQuestion['answerA']}
+                            </button>
+                        </Link>)
+                    )
+                }
+
+                {
+                    idx < 11 ? (
+                        <button className="answers_wrap"
+                                onClick={(e) => ToNextStep(e, currentQuestion['answerBType'])}
+                        >
+                            {currentQuestion['answerB']}
+                        </button>
+                    ) : (
+                        (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
+                            <button className="answers_wrap"
+                                    onClick={(e) => ToNextStep(e, currentQuestion['answerBType'])}
+                            >
                                 {currentQuestion['answerB']}
-                            </Link>)
-                    }
-                </div>
+                            </button>
+                        </Link>)
+                    )
+                }
             </div>
 
             <div className="status-bar">
