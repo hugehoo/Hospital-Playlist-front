@@ -104,6 +104,7 @@ const QuestionArea = () => {
             </div>
 
             <div className="status-bar">
+                {currentQuestion.id} / 12
                 {/*<StatusBar/>*/}
                 {/*굳이 styled-componenets 로 하지말고 컴포넌트로 만들어보자*/}
             </div>
