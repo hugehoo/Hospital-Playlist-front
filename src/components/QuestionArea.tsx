@@ -60,6 +60,7 @@ const QuestionArea = () => {
     return (
         <div className="test-bottom">
             <div className="question-container">
+                <h5>{`Q${currentQuestion.id}`}</h5>
                 {currentQuestion['title']}
             </div>
             <div className="answers">
