@@ -26,7 +26,7 @@ const QuestionArea = () => {
         } else if (idx === 11) {
             const tempArray = [...typeArray, answerType]
             const resultObj: { [index: string]: string } = {
-                "1":'',
+                "1": '',
                 "2": '',
                 "3": '',
                 "4": '',
@@ -50,8 +50,8 @@ const QuestionArea = () => {
                 //     params: resultObj
                 // }); // http 쓰지 않으면 cors 에러 난다.
                 // console.log(result)
-            } catch (e){
-            //     alert(e)
+            } catch (e) {
+                //     alert(e)
                 console.log(e)
             }
         }
@@ -60,8 +60,10 @@ const QuestionArea = () => {
     return (
         <div className="test-bottom">
             <div className="question-container">
-                <h5>{`Q${currentQuestion.id}`}</h5>
-                {currentQuestion['title']}
+                <div className="question-number">{`Q${currentQuestion.id}`}</div>
+                <div className="question-title">
+                    {currentQuestion['title']}
+                </div>
             </div>
             <div className="answers">
                 {
@@ -76,7 +78,7 @@ const QuestionArea = () => {
                             <button className="answers_wrap"
                                     onClick={(e) => ToNextStep(e, currentQuestion['answerAType'])}
                             >
-                            {currentQuestion['answerA']}
+                                {currentQuestion['answerA']}
                             </button>
                         </Link>)
                     )
