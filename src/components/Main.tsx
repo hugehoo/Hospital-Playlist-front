@@ -29,7 +29,7 @@ const Main = () => {
                         "position": "relative",
                         "top": "-20px",
                     }}>
-                        <img id="poster" src={poster} alt="슬의"/>
+                        <img id="poster" loading="lazy" src={poster} alt="슬의"/>
                     </div>
                 </div>
                 <div className="bottom">
