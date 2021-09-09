@@ -15,14 +15,6 @@ const QuestionArea = () => {
     const currentQuestion = useRecoilValue(initQuestionList(idx))
 
     useEffect(() => {
-        var word = `${currentQuestion['title'].replace("<br/>", '\n')}`
-        // var word2 = JSON.parse(word)
-        console.log(
-            // JSON.stringify(
-                word
-                // JSON.parse(word)
-            // )
-        )
     }, [idx])
 
     const [typeArray, setTypeArray] = useState<string[]>([])
@@ -75,7 +67,6 @@ const QuestionArea = () => {
                                 return (<span>{line}<br/></span>)
                             })
                         }
-                        {/*{currentQuestion['title']}*/}
                 </div>
             </div>
             <div className="answers">
