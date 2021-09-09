@@ -15,6 +15,14 @@ const QuestionArea = () => {
     const currentQuestion = useRecoilValue(initQuestionList(idx))
 
     useEffect(() => {
+        var word = `${currentQuestion['title'].replace("<br/>", '\n')}`
+        // var word2 = JSON.parse(word)
+        console.log(
+            // JSON.stringify(
+                word
+                // JSON.parse(word)
+            // )
+        )
     }, [idx])
 
     const [typeArray, setTypeArray] = useState<string[]>([])
@@ -45,7 +53,7 @@ const QuestionArea = () => {
             })
             resetIdx()
             try {
-                console.log('obj', resultObj)
+                // console.log('obj', resultObj)
                 // const result = await axios.get("http://localhost:5000/hospital/postAnswers", {
                 //     params: resultObj
                 // }); // http 쓰지 않으면 cors 에러 난다.
@@ -62,7 +70,12 @@ const QuestionArea = () => {
             <div className="question-container">
                 <div className="question-number">{`Q${currentQuestion.id}`}</div>
                 <div className="question-title">
-                    {currentQuestion['title']}
+                        {
+                            currentQuestion['title'].split('\n').map( line => {
+                                return (<span>{line}<br/></span>)
+                            })
+                        }
+                        {/*{currentQuestion['title']}*/}
                 </div>
             </div>
             <div className="answers">

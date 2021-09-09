@@ -39,7 +39,7 @@ const Main = () => {
                     </div>
                     <div className="result_data">
                         <div className="data_wrap">
-                            나와 닯은 "슬기로운 의사생활" 등장인물 찾기
+                            나와 닮은 "슬기로운 의사생활" 등장인물 찾기
                         </div>
                     </div>
                     <Link to={"/testpage"}>
