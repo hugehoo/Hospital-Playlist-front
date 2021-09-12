@@ -3,6 +3,24 @@ import axios from "axios";
 import contents from '../contents.json';
 
 
+interface IResponseData {
+    id: number
+    explanation: string
+    image: string
+    mbti: string
+    title: string
+}
+export const ResponseData = atom<IResponseData>({
+    "key": "ResponseData",
+    "default": {
+        id: 0,
+        explanation: '',
+        image: '',
+        mbti: '',
+        title: '',
+    }
+})
+
 export const QuestionList = atom<IQuestion[]>({
     "key": "TestList",
     "default": [],

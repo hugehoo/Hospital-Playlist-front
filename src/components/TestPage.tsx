@@ -3,7 +3,7 @@ import {useResetRecoilState} from "recoil";
 import {QuestionIdx} from "../store/store";
 import {useEffect} from "react";
 import QuestionArea from "./QuestionArea";
-import poster from "../슬의.png";
+import poster from "../images/슬의.png";
 // import styled from "styled-components";
 
 const TestPage = () => {

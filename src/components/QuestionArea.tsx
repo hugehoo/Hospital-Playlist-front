@@ -1,12 +1,13 @@
-import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
-import {initQuestionList, QuestionIdx} from "../store/store";
+import {useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState} from "recoil";
+import {initQuestionList, QuestionIdx, ResponseData} from "../store/store";
 // import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {apiClient} from "./utils";
 // import axios from "axios";
 
 const QuestionArea = () => {
-
+    const setResponseData = useSetRecoilState(ResponseData);
     const [idx, setIdx] = useRecoilState(QuestionIdx)
     const resetIdx = useResetRecoilState(QuestionIdx)
     useEffect(() => {
@@ -45,13 +46,14 @@ const QuestionArea = () => {
             })
             resetIdx()
             try {
-                // console.log('obj', resultObj)
-                // const result = await axios.get("http://localhost:5000/hospital/postAnswers", {
-                //     params: resultObj
-                // }); // http 쓰지 않으면 cors 에러 난다.
-                // console.log(result)
+                const result = await apiClient.get('/postAnswers', {
+                    params: resultObj
+                })
+                const data = await result.data
+                console.log(data)
+                setResponseData(data.resultData)
+                // console.log(data)
             } catch (e) {
-                //     alert(e)
                 console.log(e)
             }
         }
@@ -63,8 +65,8 @@ const QuestionArea = () => {
                 <div className="question-number">{`Q${currentQuestion.id}`}</div>
                 <div className="question-title">
                         {
-                            currentQuestion['title'].split('\n').map( line => {
-                                return (<span>{line}<br/></span>)
+                            currentQuestion['title'].split('\n').map( (line, idx) => {
+                                return (<span key={idx}>{line}<br/></span>)
                             })
                         }
                 </div>
