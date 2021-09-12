@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
 import {ResponseData} from "../store/store";
 import {SERVER} from "../config";
+import QuestionImg from "./QuestionImg";
 
 const ResultPage = () => {
     const responseData = useRecoilValue(ResponseData);
@@ -27,20 +28,7 @@ const ResultPage = () => {
                         "position": "relative",
                         "top": "-20px",
                     }}>
-                        {responseData['image'] ?
-                            (<img
-                                id="poster"
-                                src={require(`../images/${responseData['image']}.png`).default}
-                                alt={responseData['image']}/>)
-                            : (
-                                <img
-                                    id="poster"
-                                    src='../images/슬의.png'
-                                    alt={"poster"}/>
-                            )
-                        }
-
-
+                        <QuestionImg/>
                     </div>
                 </div>
                 <div className="bottom-result">
