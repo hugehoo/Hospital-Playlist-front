@@ -3,13 +3,15 @@ import poster from "../images/슬의.png"
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
 import {useResetRecoilState} from "recoil";
-import {QuestionIdx} from "../store/store";
+import {QuestionIdx, ResponseData} from "../store/store";
 
 const Main = () => {
     const resetIdx = useResetRecoilState(QuestionIdx)
+    const responseData = useResetRecoilState(ResponseData)
 
     useEffect(() => {
         resetIdx()
+        responseData()
     }, [resetIdx])
 
     return (
