@@ -1,2 +1,4 @@
 export const SERVER = "https://hp-back.herokuapp.com/hospital"
-// http://localhost:5000/hospital
+// export const SERVER = "http://localhost:5000/hospital"
+
+

@@ -7,8 +7,6 @@ import QuestionImg from "./QuestionImg";
 
 const ResultPage = () => {
     const responseData = useRecoilValue(ResponseData);
-    console.log(`../../public/${responseData['image']}.png`)
-    console.log('resp', responseData['image'])
     return (
         <section id="main_contents">
             <div className="wrapper">
@@ -17,7 +15,7 @@ const ResultPage = () => {
                         "position": "relative"
                     }}>
                         나와 닮은 의사는 <br/>
-                        {responseData['title']} 입니다.
+                        {responseData['title'] && responseData['title']} 입니다.
                         <div className="result_title_above"
                              style={{"position": "absolute", "top": "-45px", "right": "1px"}}>
                             ++

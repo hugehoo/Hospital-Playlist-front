@@ -46,13 +46,13 @@ const QuestionArea = () => {
             })
             resetIdx()
             try {
+                console.log('resultObj', resultObj)
                 const result = await apiClient.get('/result', {
                     params: resultObj
                 })
                 const data = await result.data
-                console.log('data', data)
+                console.log('data: ', data)
                 setResponseData(data.resultData)
-                // console.log(data)
             } catch (e) {
                 console.log(e)
             }
