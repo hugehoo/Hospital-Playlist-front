@@ -27,7 +27,7 @@ const QuestionArea = () => {
         } else if (idx === 11) {
             const tempArray = [...typeArray, answerType]
             const resultObj: { [index: string]: string } = {
-                "1": '',
+                "1":'',
                 "2": '',
                 "3": '',
                 "4": '',
@@ -46,11 +46,11 @@ const QuestionArea = () => {
             })
             resetIdx()
             try {
-                const result = await apiClient.get('/postAnswers', {
+                const result = await apiClient.get('/result', {
                     params: resultObj
                 })
                 const data = await result.data
-                console.log(data)
+                console.log('data', data)
                 setResponseData(data.resultData)
                 // console.log(data)
             } catch (e) {
