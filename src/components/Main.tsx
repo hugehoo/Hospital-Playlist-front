@@ -12,7 +12,7 @@ const Main = () => {
     useEffect(() => {
         resetIdx()
         responseData()
-    }, [resetIdx])
+    }, [resetIdx, responseData])
 
     return (
         <section id="main_contents">

@@ -1,9 +1,8 @@
 // import 겨울 from '../겨울.png'
 import "../style/Result.css"
 import {Link} from "react-router-dom";
-import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
+import {useRecoilValue} from "recoil";
 import {ResponseData} from "../store/store";
-import {SERVER} from "../config";
 import QuestionImg from "./QuestionImg";
 
 const ResultPage = () => {
