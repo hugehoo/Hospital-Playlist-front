@@ -1,5 +1,5 @@
 import {useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState} from "recoil";
-import {initQuestionList, QuestionIdx, ResponseData} from "../store/store";
+import {initQuestionList, IsLoading, QuestionIdx, ResponseData} from "../store/store";
 // import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
@@ -10,6 +10,8 @@ const QuestionArea = () => {
     const setResponseData = useSetRecoilState(ResponseData);
     const [idx, setIdx] = useRecoilState(QuestionIdx)
     const resetIdx = useResetRecoilState(QuestionIdx)
+    const [loading, setLoading] = useRecoilState<boolean>(IsLoading);
+
     useEffect(() => {
         resetIdx()
     }, [resetIdx])
@@ -27,7 +29,7 @@ const QuestionArea = () => {
         } else if (idx === 11) {
             const tempArray = [...typeArray, answerType]
             const resultObj: { [index: string]: string } = {
-                "1":'',
+                "1": '',
                 "2": '',
                 "3": '',
                 "4": '',
@@ -46,13 +48,17 @@ const QuestionArea = () => {
             })
             resetIdx()
             try {
-                console.log('resultObj', resultObj)
+                setLoading(true);
+
                 const result = await apiClient.get('/result', {
                     params: resultObj
                 })
                 const data = await result.data
-                console.log('data: ', data)
                 setResponseData(data.resultData)
+
+                setTimeout(() => setLoading(false), 2000)
+
+
             } catch (e) {
                 console.log(e)
             }
@@ -64,11 +70,11 @@ const QuestionArea = () => {
             <div className="question-container">
                 <div className="question-number">{`Q${currentQuestion.id}`}</div>
                 <div className="question-title">
-                        {
-                            currentQuestion['title'].split('\n').map( (line, idx) => {
-                                return (<span key={idx}>{line}<br/></span>)
-                            })
-                        }
+                    {
+                        currentQuestion['title'].split('\n').map((line, idx) => {
+                            return (<span key={idx}>{line}<br/></span>)
+                        })
+                    }
                 </div>
             </div>
             <div className="answers">

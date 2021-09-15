@@ -1,12 +1,16 @@
 // import 겨울 from '../겨울.png'
 import "../style/Result.css"
 import {Link} from "react-router-dom";
-import {useRecoilValue} from "recoil";
-import {ResponseData} from "../store/store";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {IsLoading, ResponseData} from "../store/store";
 import QuestionImg from "./QuestionImg";
+import Loading from "./Loading";
 
 const ResultPage = () => {
     const responseData = useRecoilValue(ResponseData);
+    const [loading, setLoading] = useRecoilState<boolean>(IsLoading);
+    if (loading) return <Loading type="spin" color="red" message={"wait"}/>;
+
     return (
         <section id="main_contents">
             <div className="wrapper">
@@ -46,7 +50,7 @@ const ResultPage = () => {
 
                 </div>
             </div>
-        </section>)
+        </section>);
 }
 
 export default ResultPage;

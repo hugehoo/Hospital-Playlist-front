@@ -21,6 +21,11 @@ export const ResponseData = atom<IResponseData>({
     }
 })
 
+export const IsLoading = atom<boolean>({
+    "key": "IsLoading",
+    "default" : false
+})
+
 export const QuestionList = atom<IQuestion[]>({
     "key": "TestList",
     "default": [],
