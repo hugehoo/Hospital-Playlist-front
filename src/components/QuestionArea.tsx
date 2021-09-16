@@ -1,16 +1,15 @@
 import {useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState} from "recoil";
-import {initQuestionList, IsLoading, QuestionIdx, ResponseData} from "../store/store";
-// import styled from "styled-components";
+import {initQuestionList, IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {apiClient} from "./utils";
-// import axios from "axios";
 
 const QuestionArea = () => {
     const setResponseData = useSetRecoilState(ResponseData);
     const [idx, setIdx] = useRecoilState(QuestionIdx)
     const resetIdx = useResetRecoilState(QuestionIdx)
-    const [loading, setLoading] = useRecoilState<boolean>(IsLoading);
+    const setLoading = useSetRecoilState<boolean>(IsLoading);
+    const setError = useSetRecoilState<boolean>(IsError);
 
     useEffect(() => {
         resetIdx()
@@ -49,18 +48,22 @@ const QuestionArea = () => {
             resetIdx()
             try {
                 setLoading(true);
-
                 const result = await apiClient.get('/result', {
                     params: resultObj
                 })
-                const data = await result.data
-                setResponseData(data.resultData)
-
-                setTimeout(() => setLoading(false), 2000)
-
-
+                const data = await result.data;
+                if (data.resultCode === 200) {
+                    setResponseData(data.resultData);
+                    setTimeout(() => setLoading(false), 300);
+                } else {
+                    console.log("error")
+                    setLoading(false);
+                    // return <ErrorPage/>
+                }
             } catch (e) {
-                console.log(e)
+                console.log("exception")
+                setError(true)
+                // return <ErrorPage/>
             }
         }
     }

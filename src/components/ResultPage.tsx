@@ -1,15 +1,22 @@
-// import 겨울 from '../겨울.png'
 import "../style/Result.css"
 import {Link} from "react-router-dom";
-import {useRecoilState, useRecoilValue} from "recoil";
-import {IsLoading, ResponseData} from "../store/store";
+import {useRecoilValue} from "recoil";
+import {IsError, IsLoading, ResponseData} from "../store/store";
 import QuestionImg from "./QuestionImg";
-import Loading from "./Loading";
+import Loader from "./Loading";
+import ErrorPage from "./ErrorPage";
 
 const ResultPage = () => {
     const responseData = useRecoilValue(ResponseData);
-    const [loading, setLoading] = useRecoilState<boolean>(IsLoading);
-    if (loading) return <Loading type="spin" color="red" message={"wait"}/>;
+    const loading = useRecoilValue<boolean>(IsLoading);
+    const error = useRecoilValue<boolean>(IsError);
+    if (loading) {
+        // @ts-ignore
+        return <Loader type="spin" color="red" message={"wait"}/>;
+    }
+    if (error) {
+        return <ErrorPage/>
+    }
 
     return (
         <section id="main_contents">

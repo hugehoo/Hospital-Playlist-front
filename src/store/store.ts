@@ -26,6 +26,11 @@ export const IsLoading = atom<boolean>({
     "default" : false
 })
 
+export const IsError = atom<boolean>({
+    "key": "IsError",
+    "default" : false
+})
+
 export const QuestionList = atom<IQuestion[]>({
     "key": "TestList",
     "default": [],

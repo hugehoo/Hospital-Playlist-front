@@ -3,16 +3,20 @@ import poster from "../images/슬의.png"
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
 import {useResetRecoilState} from "recoil";
-import {QuestionIdx, ResponseData} from "../store/store";
+import {IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
 
 const Main = () => {
     const resetIdx = useResetRecoilState(QuestionIdx)
     const responseData = useResetRecoilState(ResponseData)
+    const error = useResetRecoilState(IsError)
+    const loading = useResetRecoilState(IsLoading)
 
     useEffect(() => {
         resetIdx()
         responseData()
-    }, [resetIdx, responseData])
+        error()
+        loading()
+    }, [resetIdx, responseData, error, loading])
 
     return (
         <section id="main_contents">
@@ -23,7 +27,7 @@ const Main = () => {
                     }}>
                         내가 율제병원<br/> 인턴이라면
                         <div className="main_title_above"
-                             style={{"position": "absolute", "top": "-45px", "right": "1px"}}>
+                             style={{"position": "absolute", "top": "-10px", "right": "-50px", "fontSize": "50px"}}>
                             ++
                         </div>
                     </div>
