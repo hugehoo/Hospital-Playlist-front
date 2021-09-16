@@ -44,14 +44,14 @@ html{
     padding: 0 52px 0 52px;
 }
 
-.main_title_above{
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 70px;
-    color: black;
-    font-size: 70px;
-    font-weight: bolder;
-}
+/*.main_title_above{*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*    padding-right: 70px;*/
+/*    color: black;*/
+/*    font-size: 70px;*/
+/*    font-weight: bolder;*/
+/*}*/
 
 .question-container {
     text-align: center;

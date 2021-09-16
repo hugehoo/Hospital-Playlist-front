@@ -26,8 +26,7 @@ const Main = () => {
                         "position": "relative"
                     }}>
                         내가 율제병원<br/> 인턴이라면
-                        <div className="main_title_above"
-                             style={{"position": "absolute", "top": "-10px", "right": "-50px", "fontSize": "50px"}}>
+                        <div className="main_title_above">
                             ++
                         </div>
                     </div>
