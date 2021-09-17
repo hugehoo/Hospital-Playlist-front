@@ -28,12 +28,24 @@ html{
     border-radius: 15px 15px 0 0 ;
 }
 
+.test-upper-title {
+    position: relative;
+    color: #274D6E;
+    font-size: 37px;
+    margin-top: 49px;
+    width: 425px;
+}
+
 @media (max-width: 900px) {
     .test-upper{
         width: 429px;
-        height: 348px;
+        height: 428px;
         /*background-color: red;*/
         border-radius: 0;
+    }
+
+    .test-upper-title {
+        margin-top: 129px;
     }
 }
 
@@ -127,12 +139,3 @@ html{
     bottom: 75px;
 }
 
-.test-upper-title {
-    position: relative;
-
-    color: #274D6E;
-    font-size: 37px;
-    margin-top: 49px;
-    /*background-color: #ff4442;*/
-    width: 425px;
-}

@@ -55,7 +55,6 @@ html {
 .main_title_container {
     text-align: center;
     margin: 116px 0px 0px 0px;
-    /*height: 250px;*/
     color: black;
     font-size: 47px;
     font-weight: bolder;
@@ -128,7 +127,7 @@ html {
         font-weight: bolder;
         position: absolute;
         top: -10px;
-        right: -10px;
+        right: -20px;
         font-size: 30px;
     }
 
@@ -171,31 +170,11 @@ body {
 
 .photo {
     margin-top: 30px;
-    /*height: 100%;*/
-
 }
 
 #poster {
     width: 400px;
-    /*height: 100%;*/
 }
-
-/*@media(min-width: 810px){*/
-/*    .bottom{*/
-/*        height: 407px;*/
-/*        width: 100%;*/
-/*        background-color: #ffffff;*/
-/*        border-radius: 0 0 15px 15px;*/
-/*    }*/
-/*}*/
-
-/*.bottom{*/
-/*    height: 407px;*/
-/*    width: 100%;*/
-/*    background-color: #ffffff;*/
-/*    !*background-color: yellowgreen;*!*/
-/*    border-radius: 0 0 15px 15px;*/
-/*}*/
 
 .intro {
     text-align: center;
