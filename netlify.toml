@@ -1,5 +1,6 @@
 [[redirects]]
     from = "https://friendly-shannon-fbae91.netlify.app/testpage"
+    from = "https://friendly-shannon-fbae91.netlify.app/resultpage"
     to = "https://friendly-shannon-fbae91.netlify.app/"
     status = 200
 
