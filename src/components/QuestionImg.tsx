@@ -12,7 +12,9 @@ const QuestionImg = () => {
             <img
                 id="poster"
                 src={require(`../images/${imageName}.png`).default}
-                alt={ imageName}/>
+                alt={ imageName}
+                style={{"width":"250px"}}
+            />
     );
 }
 
