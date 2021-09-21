@@ -54,7 +54,7 @@ const QuestionArea = () => {
                 const data = await result.data;
                 if (data.resultCode === 200) {
                     setResponseData(data.resultData);
-                    setTimeout(() => setLoading(false), 300);
+                    setTimeout(() => setLoading(false), 0);
                 } else {
                     console.log("error")
                     setLoading(false);
