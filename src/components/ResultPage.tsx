@@ -40,7 +40,7 @@ const ResultPage = () => {
                         <QuestionImg/>
                     </div>
                     <div style={{"background": "red"}}>
-                        내용
+                        {responseData['explanation']}
                     </div>
                 </div>
                 <div className="bottom-result">
