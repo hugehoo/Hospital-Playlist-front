@@ -27,16 +27,20 @@ const ResultPage = () => {
                     }}>
                         나와 닮은 의사는 <br/>
                         {responseData['title'] && responseData['title']} 입니다.
-                        <div className="result_title_above"
-                             style={{"position": "absolute", "top": "-45px", "right": "1px"}}>
-                            ++
-                        </div>
+                        {/*<div className="result_title_above"*/}
+                        {/*     style={{"position": "absolute", "top": "-45px", "right": "1px"}}>*/}
+                        {/*    ++*/}
+                        {/*</div>*/}
                     </div>
                     <div className="image_container" style={{
                         "position": "relative",
                         "top": "-20px",
+                        // "background": "red",
                     }}>
                         <QuestionImg/>
+                    </div>
+                    <div style={{"background": "red"}}>
+                        내용
                     </div>
                 </div>
                 <div className="bottom-result">

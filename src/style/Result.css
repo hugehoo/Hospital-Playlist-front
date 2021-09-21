@@ -41,17 +41,12 @@ html {
 /*}*/
 
 .upper-result {
+    width: 429px;
     height: 708px;
     background-color: #C5F9FF;
     /*border-radius: 15px 15px 0 0;*/
 }
-@media (min-width: 812px) {
-    .upper-result {
-        height: 708px;
-        background-color: #C5F9FF;
-        border-radius: 15px 15px 0 0;
-    }
-}
+
 .result_title_above {
     display: flex;
     justify-content: flex-end;
@@ -66,20 +61,27 @@ html {
     margin: 56px 0px 0px 0px;
     /*height: 250px;*/
     color: black;
-    font-size: 42px;
+    font-size: 30px;
     font-weight: bolder;
     line-height: 70px;
     font-family: '210 라임R', sans-serif;
 }
-@media (min-width: 812px) {
+@media (min-width: 900px) {
+
+    .upper-result {
+        height: 708px;
+        background-color: #C5F9FF;
+        border-radius: 15px 15px 0 0;
+    }
+
     .result_title_container {
         text-align: center;
         margin: 116px 0px 0px 0px;
         /*height: 250px;*/
         color: black;
-        font-size: 42px;
+        font-size: 36px;
         font-weight: bolder;
-        line-height: 70px;
+        line-height: 55px;
         font-family: '210 라임R', sans-serif;
     }
 }
