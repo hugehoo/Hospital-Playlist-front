@@ -39,8 +39,13 @@ const ResultPage = () => {
                     }}>
                         <QuestionImg/>
                     </div>
-                    <div style={{"background": "red"}}>
-                        {responseData['explanation']}
+                    <div className="explanation_container">
+                        <div className="explanation_title">
+                            "성격을 보여주는 대사"
+                        </div>
+                        <div className="explanation_text">
+                            {responseData['explanation']}
+                        </div>
                     </div>
                 </div>
                 <div className="bottom-result">

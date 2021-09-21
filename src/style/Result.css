@@ -66,6 +66,33 @@ html {
     line-height: 50px;
     font-family: '210 라임R', sans-serif;
 }
+
+.explanation_container {
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
+
+.explanation_title{
+    display: inline-block;
+    color: #274D6E;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.explanation_text {
+    display: inline-block;
+
+    color: #000000;
+    font-size: 18px;
+    margin-top: 27px;
+    background-color: #ffffff;
+
+    width: 330px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 0px rgba(106, 103, 103, 0.75);
+}
+
 @media (min-width: 900px) {
 
     .upper-result {
@@ -83,6 +110,10 @@ html {
         font-weight: bolder;
         line-height: 55px;
         font-family: '210 라임R', sans-serif;
+    }
+
+    .explanation_title{
+        font-size: 25px;
     }
 }
 
