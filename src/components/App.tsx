@@ -4,6 +4,7 @@ import '../style/App.css';
 import Main from "./Main";
 import TestPage from "./TestPage"
 import ResultPage from "./ResultPage";
+import ErrorPage from "./ErrorPage";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                         <Route path="/" component={Main} exact/>
                         <Route path="/testpage" component={TestPage}/>
                         <Route path="/resultpage" component={ResultPage}/>
+                        <Route component={ErrorPage}/>
                     </Switch>
                 </header>
             </Suspense>
