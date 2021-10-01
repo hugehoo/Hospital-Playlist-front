@@ -53,94 +53,94 @@ const QuestionArea = () => {
     const CallApi = async (tempResult:any) => {
         try {
             console.log('try', tempResult)
-            setLoading(true);
+            // setLoading(true);
             const result = await apiClient.get('/result', {
                 params: tempResult
             })
             const data = await result.data;
             if (data.resultCode === 200) {
                 setResponseData(data.resultData);
-                setTimeout(() => setLoading(false), 0);
+                // setTimeout(() => setLoading(false), 0);
             } else {
                 console.log("error")
-                setLoading(false);
+                // setLoading(false);
                 // return <ErrorPage/>
             }
         } catch (e) {
             console.log("exception")
-            setError(true)
+            // setError(true)
             // return <ErrorPage/>
         }
     }
-    const ToFinalStep = async (e: any, answerType: string) => {
-
-        const tempArray = [...typeArray, answerType]
-        const resultObj: { [index: string]: string } = {
-            "1": '',
-            "2": '',
-            "3": '',
-            "4": '',
-            "5": '',
-            "6": '',
-            "7": '',
-            "8": '',
-            "9": '',
-            "10": '',
-            "11": '',
-            "12": '',
-        };
-        tempArray.forEach((ele, idx) => {
-            const id = (idx + 1).toString()
-            resultObj[id] = ele
-        })
-    }
-    const ToNextStep = async (e: any, answerType: string) => {
-
-        if (idx <= 10) {
-            setTypeArray([...typeArray, answerType]);
-            setIdx(idx + 1);
-        } else if (idx === 11) {
-            const tempArray = [...typeArray, answerType]
-            const resultObj: { [index: string]: string } = {
-                "1": '',
-                "2": '',
-                "3": '',
-                "4": '',
-                "5": '',
-                "6": '',
-                "7": '',
-                "8": '',
-                "9": '',
-                "10": '',
-                "11": '',
-                "12": '',
-            };
-            tempArray.forEach((ele, idx) => {
-                const id = (idx + 1).toString()
-                resultObj[id] = ele
-            })
-            resetIdx()
-            try {
-                setLoading(true);
-                const result = await apiClient.get('/result', {
-                    params: resultObj
-                })
-                const data = await result.data;
-                if (data.resultCode === 200) {
-                    setResponseData(data.resultData);
-                    setTimeout(() => setLoading(false), 0);
-                } else {
-                    console.log("error")
-                    setLoading(false);
-                    // return <ErrorPage/>
-                }
-            } catch (e) {
-                console.log("exception")
-                setError(true)
-                // return <ErrorPage/>
-            }
-        }
-    }
+    // const ToFinalStep = async (e: any, answerType: string) => {
+    //
+    //     const tempArray = [...typeArray, answerType]
+    //     const resultObj: { [index: string]: string } = {
+    //         "1": '',
+    //         "2": '',
+    //         "3": '',
+    //         "4": '',
+    //         "5": '',
+    //         "6": '',
+    //         "7": '',
+    //         "8": '',
+    //         "9": '',
+    //         "10": '',
+    //         "11": '',
+    //         "12": '',
+    //     };
+    //     tempArray.forEach((ele, idx) => {
+    //         const id = (idx + 1).toString()
+    //         resultObj[id] = ele
+    //     })
+    // }
+    // const ToNextStep = async (e: any, answerType: string) => {
+    //
+    //     if (idx <= 10) {
+    //         setTypeArray([...typeArray, answerType]);
+    //         setIdx(idx + 1);
+    //     } else if (idx === 11) {
+    //         const tempArray = [...typeArray, answerType]
+    //         const resultObj: { [index: string]: string } = {
+    //             "1": '',
+    //             "2": '',
+    //             "3": '',
+    //             "4": '',
+    //             "5": '',
+    //             "6": '',
+    //             "7": '',
+    //             "8": '',
+    //             "9": '',
+    //             "10": '',
+    //             "11": '',
+    //             "12": '',
+    //         };
+    //         tempArray.forEach((ele, idx) => {
+    //             const id = (idx + 1).toString()
+    //             resultObj[id] = ele
+    //         })
+    //         resetIdx()
+    //         try {
+    //             setLoading(true);
+    //             const result = await apiClient.get('/result', {
+    //                 params: resultObj
+    //             })
+    //             const data = await result.data;
+    //             if (data.resultCode === 200) {
+    //                 setResponseData(data.resultData);
+    //                 setTimeout(() => setLoading(false), 0);
+    //             } else {
+    //                 console.log("error")
+    //                 setLoading(false);
+    //                 // return <ErrorPage/>
+    //             }
+    //         } catch (e) {
+    //             console.log("exception")
+    //             setError(true)
+    //             // return <ErrorPage/>
+    //         }
+    //     }
+    // }
 
     return (
         <div className="test-bottom">
@@ -163,7 +163,7 @@ const QuestionArea = () => {
                             {currentQuestion['answerA']}
                         </button>
                     ) : (
-                        (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
+                        (<Link to="/temppage" style={{"textDecoration": "none", "color": "black"}}>
                             <button className="answers_wrap"
                                     onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}
                             >
@@ -181,7 +181,7 @@ const QuestionArea = () => {
                             {currentQuestion['answerB']}
                         </button>
                     ) : (
-                        (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
+                        (<Link to="/temppage" style={{"textDecoration": "none", "color": "black"}}>
                             <button className="answers_wrap"
                                     onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}
                             >

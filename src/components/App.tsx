@@ -5,6 +5,7 @@ import Main from "./Main";
 import TestPage from "./TestPage"
 import ResultPage from "./ResultPage";
 import ErrorPage from "./ErrorPage";
+import TempPage from "./TempPage";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                     <Switch>
                         <Route path="/" component={Main} exact/>
                         <Route path="/testpage" component={TestPage}/>
+                        <Route path="/temppage" component={TempPage}/>
                         <Route path="/resultpage" component={ResultPage}/>
                         <Route component={ErrorPage}/>
                     </Switch>
