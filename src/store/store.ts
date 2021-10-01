@@ -1,5 +1,4 @@
-import {atom, atomFamily, selector} from "recoil";
-import axios from "axios";
+import {atom, atomFamily} from "recoil";
 import contents from '../contents.json';
 
 
@@ -77,15 +76,13 @@ export interface IAnswers {
     "12": string,
 }
 
-export const currentQuestion = selector({
-    key: "currentQuestion",
-    get: async ({get}) => {
-        // const questions = get(QuestionList)
-        const currentIdx = get(QuestionIdx)
-
-        const response = await axios.get("http://localhost:4000/hospital") // http 쓰지 않으면 cors 에러 난다.
-        const data = response.data
-        return data.filter((question: { id: number; }) => question.id === currentIdx)[0]
-    },
-})
-
+// export const currentQuestion = selector({
+//     key: "currentQuestion",
+//     get: async ({get}) => {
+//         const questions = get(QuestionList)
+        // const currentIdx = get(QuestionIdx)
+        // const response = await axios.get("http://localhost:4000/hospital") // http 쓰지 않으면 cors 에러 난다.
+        // const data = response.data
+        // return data.filter((question: { id: number; }) => question.id === currentIdx)[0]
+    // },
+// })
