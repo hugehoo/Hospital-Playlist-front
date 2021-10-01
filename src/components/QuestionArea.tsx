@@ -10,6 +10,20 @@ const QuestionArea = () => {
     const resetIdx = useResetRecoilState(QuestionIdx)
     const setLoading = useSetRecoilState<boolean>(IsLoading);
     const setError = useSetRecoilState<boolean>(IsError);
+    const [state, setState] = useState({
+        "1": '',
+        "2": '',
+        "3": '',
+        "4": '',
+        "5": '',
+        "6": '',
+        "7": '',
+        "8": '',
+        "9": '',
+        "10": '',
+        "11": '',
+        "12": '',
+    })
 
     useEffect(() => {
         resetIdx()
@@ -20,6 +34,66 @@ const QuestionArea = () => {
     }, [idx])
 
     const [typeArray, setTypeArray] = useState<string[]>([])
+    const ToNextstep = async (e: any, answerType: string) => {
+        setState({
+            ...state,
+            [idx + 1] : answerType,
+        })
+        setIdx(idx => idx + 1);
+        if (idx > 10) {
+            const resultObj = {
+                ...state,
+                12: answerType
+            }
+            resetIdx()
+            await CallApi(resultObj)
+        }
+    }
+
+    const CallApi = async (tempResult:any) => {
+        try {
+            console.log('try', tempResult)
+            setLoading(true);
+            const result = await apiClient.get('/result', {
+                params: tempResult
+            })
+            const data = await result.data;
+            if (data.resultCode === 200) {
+                setResponseData(data.resultData);
+                setTimeout(() => setLoading(false), 0);
+            } else {
+                console.log("error")
+                setLoading(false);
+                // return <ErrorPage/>
+            }
+        } catch (e) {
+            console.log("exception")
+            setError(true)
+            // return <ErrorPage/>
+        }
+    }
+    const ToFinalStep = async (e: any, answerType: string) => {
+
+        const tempArray = [...typeArray, answerType]
+        const resultObj: { [index: string]: string } = {
+            "1": '',
+            "2": '',
+            "3": '',
+            "4": '',
+            "5": '',
+            "6": '',
+            "7": '',
+            "8": '',
+            "9": '',
+            "10": '',
+            "11": '',
+            "12": '',
+        };
+        tempArray.forEach((ele, idx) => {
+            const id = (idx + 1).toString()
+            resultObj[id] = ele
+        })
+    }
     const ToNextStep = async (e: any, answerType: string) => {
 
         if (idx <= 10) {
@@ -84,14 +158,14 @@ const QuestionArea = () => {
                 {
                     idx < 11 ? (
                         <button className="answers_wrap"
-                                onClick={(e) => ToNextStep(e, currentQuestion['answerAType'])}
+                                onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}
                         >
                             {currentQuestion['answerA']}
                         </button>
                     ) : (
                         (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
                             <button className="answers_wrap"
-                                    onClick={(e) => ToNextStep(e, currentQuestion['answerAType'])}
+                                    onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}
                             >
                                 {currentQuestion['answerA']}
                             </button>
@@ -102,14 +176,14 @@ const QuestionArea = () => {
                 {
                     idx < 11 ? (
                         <button className="answers_wrap"
-                                onClick={(e) => ToNextStep(e, currentQuestion['answerBType'])}
+                                onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}
                         >
                             {currentQuestion['answerB']}
                         </button>
                     ) : (
                         (<Link to="/resultpage" style={{"textDecoration": "none", "color": "black"}}>
                             <button className="answers_wrap"
-                                    onClick={(e) => ToNextStep(e, currentQuestion['answerBType'])}
+                                    onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}
                             >
                                 {currentQuestion['answerB']}
                             </button>
