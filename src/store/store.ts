@@ -8,6 +8,7 @@ interface IResponseData {
     image: string
     mbti: string
     title: string
+    famous_line: string
 }
 export const ResponseData = atom<IResponseData>({
     "key": "ResponseData",
@@ -17,6 +18,7 @@ export const ResponseData = atom<IResponseData>({
         image: '',
         mbti: '',
         title: '',
+        famous_line:''
     }
 })
 

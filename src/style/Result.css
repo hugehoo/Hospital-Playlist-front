@@ -40,6 +40,31 @@ html {
 /*    color: #000;*/
 /*}*/
 
+
+
+.App-header {
+    background-color: #FFF;
+    min-height: 100vh;
+    /*min-height: 1080px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: blue;
+}
+
+/*mobile*/
+#result_contents .wrapper {
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 429px;
+    height: 926px;
+    /*margin: 3rem 0 3rem 0;*/
+    max-width: 500px;
+}
 .upper-result {
     width: 429px;
     height: 708px;
@@ -75,25 +100,47 @@ html {
 .explanation_title{
     display: inline-block;
     color: #274D6E;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
+    width: 330px;
 }
 
+/*mobile*/
 .explanation_text {
     display: inline-block;
-
     color: #000000;
     font-size: 18px;
     margin-top: 27px;
     background-color: #ffffff;
-
-    width: 330px;
+    width: 300px;
     height: 200px;
     border-radius: 15px;
     box-shadow: 10px 10px 10px 0px rgba(106, 103, 103, 0.75);
 }
 
 @media (min-width: 900px) {
+    /*browser*/
+    .App-header {
+        background-color: #FFF;
+        /*min-height: 100vh;*/
+        min-height: 1080px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: blue;
+    }
+
+    #result_contents .wrapper {
+        /*border: none !important; !*이게 있어야하구나*!*/
+        /*border-radius: 0;*/
+        width: 100%;
+        /*height: 130%;*/
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
 
     .upper-result {
         height: 708px;
@@ -103,7 +150,7 @@ html {
 
     .result_title_container {
         text-align: center;
-        margin: 116px 0px 0px 0px;
+        margin: 66px 0px 0px 0px;
         /*height: 250px;*/
         color: black;
         font-size: 36px;
@@ -113,8 +160,22 @@ html {
     }
 
     .explanation_title{
-        font-size: 25px;
+        width: 330px;
+        font-size: 20px;
     }
+
+    .explanation_text {
+        display: inline-block;
+        color: #000000;
+        font-size: 18px;
+        margin-top: 27px;
+        background-color: #ffffff;
+        width: 350px;
+        height: 150px;
+        border-radius: 15px;
+        box-shadow: 10px 10px 10px 0px rgba(106, 103, 103, 0.75);
+    }
+
 }
 
 .subtitles {

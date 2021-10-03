@@ -19,7 +19,7 @@ const ResultPage = () => {
     }
 
     return (
-        <section id="main_contents">
+        <section id="result_contents">
             <div className="wrapper">
                 <div className="upper-result">
                     <div className="result_title_container" style={{
@@ -41,7 +41,7 @@ const ResultPage = () => {
                     </div>
                     <div className="explanation_container">
                         <div className="explanation_title">
-                            "성격을 보여주는 대사"
+                            {responseData['famous_line']}
                         </div>
                         <div className="explanation_text">
                             {responseData['explanation']}
