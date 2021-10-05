@@ -1,12 +1,13 @@
-import React, {Suspense} from 'react';
+import React, {lazy, Suspense} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import '../style/App.css';
-import Main from "./Main";
+// import Main from "./Main";
 import TestPage from "./TestPage"
 import ResultPage from "./ResultPage";
 import ErrorPage from "./ErrorPage";
 import TempPage from "./TempPage";
 
+const MainPage = lazy(() => import("./Main"))
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
             <Suspense fallback={<div>Loading...</div>}>
                 <header className="App-header">
                     <Switch>
-                        <Route path="/" component={Main} exact/>
+                        <Route exact path="/" component={MainPage} />
                         <Route path="/testpage" component={TestPage}/>
                         <Route path="/temppage" component={TempPage}/>
                         <Route path="/resultpage" component={ResultPage}/>
