@@ -34,7 +34,7 @@ const Main = () => {
                         "position": "relative",
                         "top": "-20px",
                     }}>
-                        <img id="poster" loading="lazy" src={poster} alt="슬의"/>
+                        <img id="poster" width="400" height="282" loading="lazy" src={poster} alt="슬의"/>
                     </div>
                 </div>
                 <div className="bottom">
