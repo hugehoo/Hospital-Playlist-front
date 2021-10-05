@@ -5,7 +5,6 @@ import {IsError, IsLoading, ResponseData} from "../store/store";
 import QuestionImg from "./QuestionImg";
 import Loader from "./Loading";
 import ErrorPage from "./ErrorPage";
-import {useEffect} from "react";
 
 const ResultPage = () => {
     const responseData = useRecoilValue(ResponseData);
