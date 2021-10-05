@@ -7,12 +7,12 @@ html {
 
 @font-face {
     font-family: '210 나무굴림R';
-    src: url('./fonts/210 나무굴림R.ttf') format('truetype');
+    src: url('fonts/210 나무굴림R.woff2') format('truetype');
 }
 
 @font-face {
     font-family: '210 라임R';
-    src: url('./fonts/210 라임R.ttf') format('truetype');
+    src: url('fonts/210 라임R.woff2') format('truetype');
 }
 
 @keyframes rotate {
@@ -67,9 +67,8 @@ html {
 }
 .upper-result {
     width: 429px;
-    height: 708px;
+    height: 808px;
     background-color: #C5F9FF;
-    /*border-radius: 15px 15px 0 0;*/
 }
 
 .result_title_above {
@@ -110,10 +109,12 @@ html {
     display: inline-block;
     color: #000000;
     font-size: 18px;
+    line-height: 1.4em;
+    padding: 9px;
     margin-top: 27px;
     background-color: #ffffff;
     width: 300px;
-    height: 200px;
+    height: 220px;
     border-radius: 15px;
     box-shadow: 10px 10px 10px 0px rgba(106, 103, 103, 0.75);
 }
@@ -143,7 +144,7 @@ html {
     }
 
     .upper-result {
-        height: 708px;
+        height: 908px;
         background-color: #C5F9FF;
         border-radius: 15px 15px 0 0;
     }
@@ -167,11 +168,13 @@ html {
     .explanation_text {
         display: inline-block;
         color: #000000;
-        font-size: 18px;
+        font-size: 19px;
+        line-height: 1.2em;
+        padding: 10px;
         margin-top: 27px;
         background-color: #ffffff;
         width: 350px;
-        height: 150px;
+        height: 200px;
         border-radius: 15px;
         box-shadow: 10px 10px 10px 0px rgba(106, 103, 103, 0.75);
     }
