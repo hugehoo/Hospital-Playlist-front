@@ -1,10 +1,12 @@
 import "../style/Main.css"
-import poster from "../images/슬의.avif"
+// import poster from "../images/슬의.avif"
 import {Link} from "react-router-dom";
-import {useEffect} from "react";
+import {lazy, useEffect} from "react";
 import {useResetRecoilState} from "recoil";
 import {IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
+// import LazyImage from "./LazyImg";
 
+const LazyImage = lazy(() => import("./LazyImg"))
 const Main = () => {
     const resetIdx = useResetRecoilState(QuestionIdx)
     const responseData = useResetRecoilState(ResponseData)
@@ -34,7 +36,8 @@ const Main = () => {
                         "position": "relative",
                         "top": "-20px",
                     }}>
-                        <img id="poster" width="400" height="282" loading="lazy" src={poster} alt="슬의"/>
+                        <LazyImage/>
+                        {/*<img id="poster" width="400" height="282" loading="lazy" src={poster} alt="슬의"/>*/}
                     </div>
                 </div>
                 <div className="bottom">
