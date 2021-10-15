@@ -5,13 +5,19 @@ import {
     // IsError, IsLoading,
     ResponseData} from "../store/store";
 import QuestionImg from "./QuestionImg";
-import Loader from "./Loading";
+// import Loader from "./Loading";
 import {useEffect} from "react";
 import KakaoShareButton from "./KakaoShareButton";
 // import ErrorPage from "./ErrorPage";
 // import Loading from "./Loading";
 
-const ResultPage = () => {
+
+//@ts-ignore
+const ResultPage = ({location, match}) => {
+    const CharacterId = match.params.id;
+    console.log("========================",match, match.params.id)
+    console.log("=========location======",location)
+    console.log("========CharacterId=========",CharacterId)
     useEffect(() => {
         const script = document.createElement('script')
         script.src = 'https://developers.kakao.com/sdk/js/kakao.js'
@@ -32,10 +38,11 @@ const ResultPage = () => {
     // if (error) {
     //     return <ErrorPage/>
     // }
-    if (!responseData) {
-        // @ts-ignore
-        return <Loader type="spin" color="red" message={"wait"}/>;
-    }
+
+    // if (!responseData) {
+    // // @ts-ignore
+    // return <Loader type="spin" color="red" message={"wait"}/>;
+    // }
 
     return (
         <section id="result_contents">
@@ -81,6 +88,6 @@ const ResultPage = () => {
                 </div>
             </div>
         </section>);
-}
+};
 
 export default ResultPage;
