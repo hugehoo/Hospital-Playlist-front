@@ -1,23 +1,17 @@
 import {Link} from "react-router-dom";
 import {useRecoilValue} from "recoil";
-import {ResponseData} from "../store/store";
+import {ResultObj} from "../store/store";
+import {chooseSingleType, switchType} from "../utils";
 
 const TempPage = () => {
-    const responseData = useRecoilValue(ResponseData);
-    console.log('--------------------', responseData)
-    if (responseData.id !== 0) {
-        return (
-            // <Redirect
-            //     to={{ pathname: `/resultpage/${resultNum}`, state: { isUser: true } }}
-            // />
-            <Link to={`/resultpage/${responseData.id}`} style={{"textDecoration": "none", "color": "black"}}>
-                <button>button</button>
-            </Link>
-        );
-    } else {
-        return <div>...Loading</div>
-    }
-
+    const state = useRecoilValue(ResultObj)
+    //@ts-ignore
+    const resultId: number = switchType(chooseSingleType(state));
+    return (
+        <Link to={`/resultpage/${resultId}`} style={{"textDecoration": "none", "color": "black"}}>
+            <button>button</button>
+        </Link>
+    );
 }
 
 export default TempPage
