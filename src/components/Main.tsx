@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 import {lazy, useEffect} from "react";
 import {useResetRecoilState} from "recoil";
 import {IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
-const lazyWithPreload = (importFunction:any) => {
+
+const lazyWithPreload = (importFunction: any) => {
     const Component = lazy(importFunction);
     //@ts-ignore
     Component.preload = importFunction;
@@ -40,8 +41,6 @@ const Main = () => {
 
     }, []);
 
-
-
     return (
         <section id="main_contents">
             <div className="wrapper">
@@ -65,7 +64,7 @@ const Main = () => {
                             quality: 80,
                             format: 'png'
                         })} alt="슬의"
-                             style={{"width": "380px", "height":"282px"}}
+                             style={{"width": "380px", "height": "282px"}}
                         />
                     </div>
                 </div>
@@ -84,16 +83,11 @@ const Main = () => {
                     </Link>
                 </div>
             </div>
-            <div>
-                <button onClick={() => {
-                    "javascript:sendLink()"
-                }}>
-                    <img alt="슬의" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
-                </button>
-                {/*<a href="javascript:sendLink()"><img alt="슬의" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" /></a>*/}
-            </div>
+            {/*<div>*/}
+            {/*    <a href="javascript:sendLink()"><img alt="슬의" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" /></a>*/}
+            {/*</div>*/}
         </section>
-    )
+)
 }
 
 export default Main;
