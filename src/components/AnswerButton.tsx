@@ -94,46 +94,6 @@ const AnswerButton = () => {
                     </>
                 )
             }
-
-
-            {/*{*/}
-            {/*    idx < 11 ? (*/}
-            {/*        <button className="answers_wrap"*/}
-            {/*                onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}*/}
-            {/*        >*/}
-            {/*            {currentQuestion['answerA']}*/}
-            {/*        </button>*/}
-            {/*    ) : (*/}
-            {/*        (<Link to="/temppage" style={{"textDecoration": "none", "color": "black"}}>*/}
-            {/*            <button className="answers_wrap"*/}
-            {/*                    onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}*/}
-            {/*            >*/}
-            {/*                {currentQuestion['answerA']}*/}
-            {/*            </button>*/}
-            {/*        </Link>)*/}
-            {/*    )*/}
-            {/*}*/}
-
-            {/*{*/}
-            {/*    idx < 11 ? */}
-            {/*    (*/}
-            {/*        (<Link to="/temppage" style={{"textDecoration": "none", "color": "black"}}>*/}
-            {/*            <button className="answers_wrap"*/}
-            {/*                    onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}*/}
-            {/*            >*/}
-            {/*                {currentQuestion['answerB']}*/}
-            {/*            </button>*/}
-            {/*        </Link>)*/}
-            {/*    ): (*/}
-            {/*        (<Link to="/temppage" style={{"textDecoration": "none", "color": "black"}}>*/}
-            {/*            <button className="answers_wrap"*/}
-            {/*                    onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}*/}
-            {/*            >*/}
-            {/*                {currentQuestion['answerB']}*/}
-            {/*            </button>*/}
-            {/*        </Link>)*/}
-            {/*    )*/}
-            {/*}*/}
         </>
     )
 }

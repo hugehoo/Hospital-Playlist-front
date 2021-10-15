@@ -23,7 +23,7 @@ export const ResponseData = atom<IResponseData>({
         title: '',
         famous_line:''
     },
-    effects_UNSTABLE: [persistAtom]
+    // effects_UNSTABLE: [persistAtom]
 })
 
 export const IsLoading = atom<boolean>({
