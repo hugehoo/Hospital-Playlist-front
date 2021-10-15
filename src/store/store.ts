@@ -1,9 +1,9 @@
 import {atom, atomFamily} from "recoil";
 import contents from '../contents.json';
-// import {recoilPersist} from "recoil-persist";
+import {recoilPersist} from "recoil-persist";
 
 
-// const {persistAtom} = recoilPersist();
+const {persistAtom} = recoilPersist();
 
 interface IResponseData {
     id: number
@@ -23,7 +23,7 @@ export const ResponseData = atom<IResponseData>({
         title: '',
         famous_line:''
     },
-    // effects_UNSTABLE: [persistAtom]
+    effects_UNSTABLE: [persistAtom]
 })
 
 export const IsLoading = atom<boolean>({
@@ -81,6 +81,24 @@ export interface IAnswers {
     "11": string,
     "12": string,
 }
+
+export const ResultObj = atom<IAnswers>({
+    key: 'ResultObj',
+    default: {
+        "1": '',
+        "2": '',
+        "3": '',
+        "4": '',
+        "5": '',
+        "6": '',
+        "7": '',
+        "8": '',
+        "9": '',
+        "10": '',
+        "11": '',
+        "12": '',
+    }
+})
 
 // export const currentQuestion = selector({
 //     key: "currentQuestion",

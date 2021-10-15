@@ -1,28 +1,12 @@
 import {Link} from "react-router-dom";
-import {initQuestionList, QuestionIdx, ResponseData} from "../store/store";
-import {useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState} from "recoil";
-import {useState} from "react";
-import {apiClient} from "./utils";
+import {initQuestionList, QuestionIdx, ResultObj} from "../store/store";
+import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
 
 const AnswerButton = () => {
-    const setResponseData = useSetRecoilState(ResponseData);
     const resetIdx = useResetRecoilState(QuestionIdx)
     const [idx, setIdx] = useRecoilState(QuestionIdx)
     const currentQuestion = useRecoilValue(initQuestionList(idx))
-    const [state, setState] = useState({
-        "1": '',
-        "2": '',
-        "3": '',
-        "4": '',
-        "5": '',
-        "6": '',
-        "7": '',
-        "8": '',
-        "9": '',
-        "10": '',
-        "11": '',
-        "12": '',
-    })
+    const [state, setState] = useRecoilState(ResultObj)
 
     const ToNextstep = async (e: any, answerType: string) => {
         setState({
@@ -35,25 +19,8 @@ const AnswerButton = () => {
                 ...state,
                 12: answerType
             }
+            setState(resultObj)
             resetIdx()
-            await CallApi(resultObj)
-        }
-    }
-
-    const CallApi = async (resultObj: Object) => {
-        try {
-            console.log('try', resultObj)
-            const result = await apiClient.get('/result', {
-                params: resultObj
-            })
-            const data = await result.data;
-            if (data.resultCode === 200) {
-                setResponseData(data.resultData);
-            } else {
-                console.log("error")
-            }
-        } catch (e) {
-            console.log("exception")
         }
     }
 
