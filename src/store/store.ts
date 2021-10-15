@@ -1,6 +1,9 @@
 import {atom, atomFamily} from "recoil";
 import contents from '../contents.json';
+import {recoilPersist} from "recoil-persist";
 
+
+const {persistAtom} = recoilPersist();
 
 interface IResponseData {
     id: number
@@ -19,7 +22,8 @@ export const ResponseData = atom<IResponseData>({
         mbti: '',
         title: '',
         famous_line:''
-    }
+    },
+    effects_UNSTABLE: [persistAtom]
 })
 
 export const IsLoading = atom<boolean>({
