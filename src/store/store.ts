@@ -1,9 +1,9 @@
 import {atom, atomFamily} from "recoil";
 import contents from '../contents.json';
-import {recoilPersist} from "recoil-persist";
+// import {recoilPersist} from "recoil-persist";
 
 
-const {persistAtom} = recoilPersist();
+// const {persistAtom} = recoilPersist();
 
 interface IResponseData {
     id: number
