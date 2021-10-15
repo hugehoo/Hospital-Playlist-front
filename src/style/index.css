@@ -15,7 +15,8 @@ body {
 /*}*/
 @font-face {
     font-family: '210 나무굴림R';
-    src: url('fonts/210 나무굴림R.woff2') format('truetype');
+    src: local('fonts/210 나무굴림R'),
+    url('fonts/210 나무굴림R.woff2') format('woff2');
 }
 
 code {
