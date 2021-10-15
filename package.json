@@ -48,5 +48,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cra-bundle-analyzer": "^0.1.0"
+  }
 }
