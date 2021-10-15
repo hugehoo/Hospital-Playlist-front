@@ -39,15 +39,15 @@ const KakaoShareButton = () => {
                     {
                         title: '웹으로 보기',
                         link: {
-                            mobileWebUrl: 'https://friendly-shannon-fbae91.netlify.app/resultpage',
-                            webUrl: 'https://friendly-shannon-fbae91.netlify.app/resultpage',
+                            mobileWebUrl: window.location.href,
+                            webUrl: window.location.href,
                         }
                     },
                     {
                         title: '앱으로 보기',
                         link: {
-                            mobileWebUrl: 'https://friendly-shannon-fbae91.netlify.app/resultpage',
-                            webUrl: 'https://friendly-shannon-fbae91.netlify.app/resultpage',                        },
+                            mobileWebUrl: window.location.href,
+                            webUrl: window.location.href,    },
                     },
                 ],
             })
