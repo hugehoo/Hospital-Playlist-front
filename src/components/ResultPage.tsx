@@ -1,12 +1,13 @@
 import "../style/Result.css"
 import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import KakaoShareButton from "./KakaoShareButton";
 import {apiClient} from "./utils";
+import ClipboardCopy from "./ClipboardCopy";
 
 const Parsing = (CharacterId: any) => {
     const [state, setState] = useState();
-    useEffect(() :any => {
+    useEffect((): any => {
         const CallApi = async (resultObj: string) => {
             try {
                 const result = await apiClient.get(`/result?id=${resultObj}`)
@@ -22,13 +23,14 @@ const Parsing = (CharacterId: any) => {
         }
         CallApi(CharacterId);
     }, [CharacterId]);
-    if (!state)  return null;
+    if (!state) return null;
     return state
 }
 //@ts-ignore
 const ResultPage = ({location, match}) => {
     const CharacterId = match.params.id;
     const responseData = Parsing(CharacterId)
+    const copyUrlRef = useRef()
 
     useEffect(() => {
         const script = document.createElement('script')
@@ -40,7 +42,7 @@ const ResultPage = ({location, match}) => {
         }
     }, [])
 
-    if(!responseData) return <div>...loading</div>
+    if (!responseData) return <div>...loading</div>
     return (
         <section id="result_contents">
             <div className="wrapper">
@@ -60,12 +62,18 @@ const ResultPage = ({location, match}) => {
                             id="poster"
                             src={require(`../images/${responseData['image']}.jpeg`).default + `?w=440&h=440&quality=75`}
                             alt={responseData['image']}
-                            style={{"width": "220px", "height":"220px"}}
+                            style={{"width": "220px", "height": "220px"}}
                         />
                     </div>
                     <div className="explanation_container">
                         <div className="explanation_title">
-                            {responseData['famous_line']}
+                            {/*{responseData['famous_line']}*/}
+                            {
+                                //@ts-ignore
+                                responseData['famous_line'].split('\\n').map((line, idx) => {
+                                    return (<span key={idx}>{line}<br/></span>)
+                                })
+                            }
                         </div>
                         <div className="explanation_text">
                             {responseData['explanation']}
@@ -81,10 +89,10 @@ const ResultPage = ({location, match}) => {
                         <KakaoShareButton/>
                         {/*</button>*/}
                         <button className="sns-button" type="button">
-                            인스타
+                            <ClipboardCopy/>
                         </button>
                         <button className="sns-button" type="button">
-                            페이스북
+                            시즌3 기원🌟
                         </button>
                     </div>
 

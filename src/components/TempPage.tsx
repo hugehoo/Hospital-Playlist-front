@@ -9,7 +9,7 @@ const TempPage = () => {
     const resultId: number = switchType(chooseSingleType(state));
     return (
         <Link to={`/resultpage/${resultId}`} style={{"textDecoration": "none", "color": "black"}}>
-            <button>button</button>
+            <button> 결과 보러가기 </button>
         </Link>
     );
 }

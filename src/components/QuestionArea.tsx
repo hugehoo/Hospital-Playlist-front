@@ -2,6 +2,7 @@ import {useRecoilValue, useResetRecoilState} from "recoil";
 import {initQuestionList, QuestionIdx} from "../store/store";
 import {useEffect} from "react";
 import AnswerButton from "./AnswerButton";
+import Bar from "./Bar";
 
 const QuestionArea = () => {
     const idx = useRecoilValue(QuestionIdx)
@@ -14,8 +15,7 @@ const QuestionArea = () => {
 
     useEffect(() => {
     }, [idx])
-
-
+    const gauge = Math.floor(idx/11 *100)
     return (
         <div className="test-bottom">
             <div className="question-container">
@@ -32,9 +32,15 @@ const QuestionArea = () => {
                 <AnswerButton/>
             </div>
 
-            <div className="status-bar">
-                {currentQuestion.id} / 12
-            </div>
+            {/*<div className="status-bar">*/}
+            {/*    {currentQuestion.id} / 12*/}
+            {/*</div>*/}
+
+            <Bar
+                key={`bar-item-${idx}`}
+                percent={gauge}
+                isSelected={true}
+            />
         </div>
     );
 }

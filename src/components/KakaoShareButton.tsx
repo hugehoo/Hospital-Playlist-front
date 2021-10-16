@@ -54,12 +54,11 @@ const KakaoShareButton = () => {
         }
     }
     return (
-        <div className="kakao-share-button">
-            {/* Kakao share button */}
-            <button id="kakao-link-btn">
-                <img src="/icons/kakao.png" alt="kakao-share-icon" />
+        <>
+            <button id="kakao-link-btn" style={{"border":"none", "outline":"none", "background":"none"}}>
+                <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" alt="kakao-share-icon" />
             </button>
-        </div>
+        </>
     )
 }
 export default KakaoShareButton

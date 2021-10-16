@@ -209,14 +209,14 @@ body {
 
 .start-button {
     width: 323px;
-    height: 75px;
+    height: 68px;
     border-radius: 15px;
     background-color: #79EBF8;
     border: 3px solid #5ECFDC;
     cursor: pointer;
     color: #ffffff;
     font-size: 30px;
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
 }
 
 .start {

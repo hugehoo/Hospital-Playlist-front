@@ -35,15 +35,6 @@ html {
     }
 }
 
-/*body {*/
-/*    font-size: 20px;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    color: #000;*/
-/*}*/
-
-
-
 .App-header {
     background-color: #FFF;
     min-height: 100vh;
@@ -58,7 +49,8 @@ html {
 
 /*mobile*/
 #result_contents .wrapper {
-    border: 1px solid black;
+    /*border: none !important; !*이게 있어야하구나*!*/
+    /*border: 1px solid black;*/
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -112,7 +104,7 @@ html {
     color: #000000;
     font-size: 18px;
     line-height: 1.4em;
-    padding: 9px;
+    padding: 15px;
     margin-top: 27px;
     background-color: #ffffff;
     width: 300px;
@@ -136,10 +128,11 @@ html {
     }
 
     #result_contents .wrapper {
+        border: 1px solid black;
         /*border: none !important; !*이게 있어야하구나*!*/
         /*border-radius: 0;*/
-        width: 100%;
         /*height: 130%;*/
+        width: 100%;
         display: flex;
         justify-content: center;
         margin: 0;
@@ -168,11 +161,10 @@ html {
     }
 
     .explanation_text {
-        display: inline-block;
         color: #000000;
-        font-size: 19px;
-        line-height: 1.2em;
-        padding: 10px;
+        font-size: 17px;
+        line-height: 1.5em;
+        padding: 15px;
         margin-top: 27px;
         background-color: #ffffff;
         width: 350px;
