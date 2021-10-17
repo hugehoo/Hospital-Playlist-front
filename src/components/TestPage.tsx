@@ -2,7 +2,6 @@ import "../style/Testpage.css"
 import {useRecoilValue, useResetRecoilState} from "recoil";
 import {initQuestionList, QuestionIdx} from "../store/store";
 import {useEffect} from "react";
-import QuestionArea from "./QuestionArea";
 import AnswerButton from "./AnswerButton";
 import Bar from "./Bar";
 
