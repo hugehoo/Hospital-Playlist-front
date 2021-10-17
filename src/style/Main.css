@@ -4,17 +4,10 @@ html {
     height: 100vh;
 }
 
-
-/*@font-face {*/
-/*    font-family: '210 나무굴림R';*/
-/*    src: url('./fonts/210 나무굴림R.woff2') format('truetype');*/
-/*}*/
-
 @font-face {
     font-family: '210 라임R';
-    /*src: url('./fonts/210 라임R.woff2') format('truetype');*/
-    src:local('fonts/210 라임R'),
-            url('./fonts/210 라임R.woff2') format('woff2');
+    src: local('fonts/210 라임R'),
+    url('./fonts/210 라임R.woff2') format('woff2');
 }
 
 @keyframes rotate {
@@ -157,10 +150,7 @@ body {
 .subtitles {
     margin-top: 28px;
     margin-bottom: 40px;
-    /*background-color: #7f47dd;*/
-    /*width: 323px;*/
     height: 2em;
-    /*line-height: 2em;*/
 }
 
 .sub_title {
@@ -243,4 +233,67 @@ body {
 .result_data li {
     font-size: 15px;
     padding-bottom: 10px
+}
+
+#wrapper-temp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 375px;
+    font-family: "210 나무굴림R";
+}
+
+#temp-button {
+    border: none;
+    cursor: pointer;
+    border-radius: 13px;
+    background-color: #55A7CE;;
+    width: 290px;
+    height: 80px;
+    color: black;
+    font: inherit;
+    fontSize: 50px;
+
+    animation-name: ping;
+
+}
+
+.ping {
+    -webkit-animation: ping 1.8s ease-in-out infinite both;
+    animation: ping 1.8s ease-in-out infinite both;
+}
+
+@-webkit-keyframes ping {
+    0% {
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
+        opacity: 0.8;
+    }
+    80% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(2.2);
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+@keyframes ping {
+    0% {
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
+        opacity: 0.8;
+    }
+    80% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(2.2);
+        transform: scale(2.2);
+        opacity: 0;
+    }
 }

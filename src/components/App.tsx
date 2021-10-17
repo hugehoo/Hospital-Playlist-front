@@ -12,7 +12,9 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={ <div className="ping">
+                    <img src="../images/슬의.jpeg" alt=""/>
+                </div>}>
                     <header className="App-header">
                         <Switch>
                             <Route path="/" component={Main} exact/>

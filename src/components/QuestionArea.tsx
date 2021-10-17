@@ -15,7 +15,7 @@ const QuestionArea = () => {
 
     useEffect(() => {
     }, [idx])
-    const gauge = Math.floor(idx/11 *100)
+    const gauge = Math.floor(idx / 11 * 100)
     return (
         <div className="test-bottom">
             <div className="question-container">
@@ -31,11 +31,6 @@ const QuestionArea = () => {
             <div className="answers">
                 <AnswerButton/>
             </div>
-
-            {/*<div className="status-bar">*/}
-            {/*    {currentQuestion.id} / 12*/}
-            {/*</div>*/}
-
             <Bar
                 key={`bar-item-${idx}`}
                 percent={gauge}

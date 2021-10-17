@@ -8,9 +8,9 @@ import ClipboardCopy from "./ClipboardCopy";
 const Parsing = (CharacterId: any) => {
     const [state, setState] = useState();
     useEffect((): any => {
-        const CallApi = async (resultObj: string) => {
+        const CallApi = async (resultId: string) => {
             try {
-                const result = await apiClient.get(`/result?id=${resultObj}`)
+                const result = await apiClient.get(`/result?id=${resultId}`)
                 const data = await result.data;
                 if (data.resultCode === 200) {
                     setState(data.resultData);
@@ -41,7 +41,9 @@ const ResultPage = ({location, match}) => {
         }
     }, [])
 
-    if (!responseData) return <div>...loading</div>
+    if (!responseData) return <div className="ping">
+        <img src="../images/슬의.jpeg" alt=""/>
+    </div>
     return (
         <section id="result_contents">
             <div className="wrapper">
@@ -81,20 +83,14 @@ const ResultPage = ({location, match}) => {
                 </div>
                 <div className="bottom-result">
                     <Link to="/">
-                        <button className="result-button" type="button">테스트 다시하기</button>
+                        <button className="sns-button" id="re-test" type="button">테스트 다시하기</button>
                     </Link>
-                    <div id="sns-buttons">
-                        {/*<button className="sns-button" type="button">*/}
+                    <button className="sns-button" id="url-share" type="button">
+                        <ClipboardCopy/>
+                    </button>
+                    <button className="sns-button" id="kakao-share" type="button">
                         <KakaoShareButton/>
-                        {/*</button>*/}
-                        <button className="sns-button" type="button">
-                            <ClipboardCopy/>
-                        </button>
-                        <button className="sns-button" type="button">
-                            시즌3 기원🌟
-                        </button>
-                    </div>
-
+                    </button>
                 </div>
             </div>
         </section>);

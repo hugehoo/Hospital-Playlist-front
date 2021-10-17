@@ -29,6 +29,6 @@ export default function ClipboardCopy() {
     };
 
     return (
-        <button style={{"background":"none", "border":"none"}} onClick={() => doCopy(window.location.href)}>복사하기</button>
+        <button id="url-share" onClick={() => doCopy(window.location.href)}>링크 공유하기</button>
     );
 }

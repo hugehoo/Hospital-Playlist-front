@@ -55,8 +55,8 @@ const KakaoShareButton = () => {
     }
     return (
         <>
-            <button id="kakao-link-btn" style={{"border":"none", "outline":"none", "background":"none"}}>
-                <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" alt="kakao-share-icon" />
+            <button className="sns-button" id="kakao-link-btn" style={{"border":"none", "outline":"none", "background":"none"}}>
+                카카오톡 공유하기
             </button>
         </>
     )
