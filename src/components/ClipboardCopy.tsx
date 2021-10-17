@@ -29,6 +29,6 @@ export default function ClipboardCopy() {
     };
 
     return (
-        <button id="url-share" onClick={() => doCopy(window.location.href)}>링크 공유하기</button>
+        <button className="sns-button" id="url-share" onClick={() => doCopy(window.location.href)}>링크 공유하기</button>
     );
 }

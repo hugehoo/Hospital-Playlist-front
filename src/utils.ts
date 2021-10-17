@@ -2,7 +2,9 @@ export const MBTI_ARRAY = ["E", "I", "N", "S", "F", "T", "P", "J"]
 
 export const chooseSingleType = (obj: {[idx: string]: string}) => {
     const newObj = {};
+    console.log("obj", obj)
     Object.values(obj).forEach(v => {
+        console.log('v', "IE".slice(0,1),"I".slice(1,2))
         //@ts-ignore
         newObj[v] = newObj[v] + 1 || 1
     })

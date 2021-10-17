@@ -85,12 +85,8 @@ const ResultPage = ({location, match}) => {
                     <Link to="/">
                         <button className="sns-button" id="re-test" type="button">테스트 다시하기</button>
                     </Link>
-                    <button className="sns-button" id="url-share" type="button">
-                        <ClipboardCopy/>
-                    </button>
-                    <button className="sns-button" id="kakao-share" type="button">
-                        <KakaoShareButton/>
-                    </button>
+                    <ClipboardCopy/>
+                    <KakaoShareButton/>
                 </div>
             </div>
         </section>);
