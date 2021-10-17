@@ -20,12 +20,10 @@ const KakaoShareButton = () => {
                 container: '#kakao-link-btn',
                 objectType: 'feed',
                 content: {
-                    title: '타이틀',
-                    description: '#리액트 #카카오 #공유버튼',
-                    imageUrl: 'https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png', // i.e. process.env.FETCH_URL + '/logo.png'
+                    title: '슬기로운 의사생활 심리테스트',
+                    description: '#시즌3 #기원 #슬의심리테스트',
+                    imageUrl: "../images/슬의.jpeg", // i.e. process.env.FETCH_URL + '/logo.png'
                     link: {
-                        // mobileWebUrl: 'https://friendly-shannon-fbae91.netlify.app/resultpage',
-                        // webUrl: 'https://friendly-shannon-fbae91.netlify.app/resultpage',
                         mobileWebUrl: window.location.href,
                         webUrl: window.location.href,
                     },
@@ -42,12 +40,6 @@ const KakaoShareButton = () => {
                             mobileWebUrl: window.location.href,
                             webUrl: window.location.href,
                         }
-                    },
-                    {
-                        title: '앱으로 보기',
-                        link: {
-                            mobileWebUrl: window.location.href,
-                            webUrl: window.location.href,    },
                     },
                 ],
             })
