@@ -30,7 +30,6 @@ const Parsing = (CharacterId: any) => {
 const ResultPage = ({location, match}) => {
     const CharacterId = match.params.id;
     const responseData = Parsing(CharacterId)
-    const copyUrlRef = useRef()
 
     useEffect(() => {
         const script = document.createElement('script')
