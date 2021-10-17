@@ -22,8 +22,7 @@ const KakaoShareButton = () => {
                 content: {
                     title: '슬기로운 의사생활 심리테스트',
                     description: '#시즌3 #기원 #슬의심리테스트',
-                    imageUrl: process.env.PUBLIC_URL + "/static/media/%EC%8A%AC%EC%9D%98.194ae169.jpeg?w=380px&h=282px&q=80&fm=png&fit=crop",
-                    // https://friendly-shannon-fbae91.netlify.app/static/media/%/**/EC%8A%AC%EC%9D%98.194ae169.jpeg?w=380px&h=282px&q=80&fm=png&fit=crop
+                    imageUrl: "https://friendly-shannon-fbae91.netlify.app/static/media/%/**/EC%8A%AC%EC%9D%98.194ae169.jpeg?w=380px&h=282px&q=80&fm=png&fit=crop",
                     link: {
                         mobileWebUrl: window.location.href,
                         webUrl: window.location.href,
