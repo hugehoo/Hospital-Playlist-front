@@ -60,7 +60,7 @@ const ResultPage = ({location, match}) => {
                         {/* 결과 이미지*/}
                         <img
                             id="poster"
-                            src={require(`../images/${responseData['image']}.jpeg`).default + `?w=440&h=440&quality=75`}
+                            src={require(`../images/${responseData['id']}.jpeg`).default + `?w=440&h=440&quality=75`}
                             alt={responseData['image']}
                             style={{"width": "220px", "height": "220px"}}
                         />
