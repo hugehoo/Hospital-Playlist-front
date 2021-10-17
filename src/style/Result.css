@@ -245,7 +245,7 @@ html {
 .sns-button {
     width: 270px;
     height: 48px;
-    /*background-color: #55A7CE;*/
+    background-color: #55A7CE;
     font-size: 18px;
     font-weight: bold;
     color: white;
@@ -260,8 +260,7 @@ html {
 }
 
 #kakao-link-btn {
-    background-color: #dcd00d;
-
+    background-color: #FAE100;
 }
 
 #url-share {

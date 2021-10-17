@@ -52,7 +52,6 @@ const TestPage = () => {
                         isSelected={true}
                     />
                 </div>
-
             </div>
         </section>);
 }

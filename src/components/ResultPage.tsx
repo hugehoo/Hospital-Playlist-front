@@ -83,7 +83,7 @@ const ResultPage = ({location, match}) => {
                 </div>
                 <div className="bottom-result">
                     <Link to="/">
-                        <button className="sns-button" id="re-test" type="button">테스트 다시하기</button>
+                        <button className="sns-button" type="button">테스트 다시하기</button>
                     </Link>
                     <ClipboardCopy/>
                     <KakaoShareButton/>

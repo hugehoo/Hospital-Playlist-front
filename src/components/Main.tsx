@@ -79,6 +79,7 @@ const Main = () => {
                         </div>
                     </div>
                     <Link to={"/testpage"}>
+                        {/*<button className="start-button" type="button">START</button>*/}
                         <button className="start-button" type="button">START</button>
                     </Link>
                 </div>
