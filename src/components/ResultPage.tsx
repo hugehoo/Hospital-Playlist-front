@@ -1,6 +1,6 @@
 import "../style/Result.css"
 import {Link} from "react-router-dom";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import KakaoShareButton from "./KakaoShareButton";
 import {apiClient} from "./utils";
 import ClipboardCopy from "./ClipboardCopy";
