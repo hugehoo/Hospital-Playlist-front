@@ -1,15 +1,20 @@
 import "../style/Testpage.css"
 import {useRecoilValue, useResetRecoilState} from "recoil";
-import {QuestionIdx} from "../store/store";
+import {initQuestionList, QuestionIdx} from "../store/store";
 import {useEffect} from "react";
 import QuestionArea from "./QuestionArea";
+import AnswerButton from "./AnswerButton";
+import Bar from "./Bar";
 
 const TestPage = () => {
     const idx = useRecoilValue(QuestionIdx)
     const resetIdx = useResetRecoilState(QuestionIdx)
+    const currentQuestion = useRecoilValue(initQuestionList(idx))
+
     useEffect(() => {
         resetIdx()
     }, [resetIdx])
+    const gauge = Math.floor(idx / 11 * 100)
 
     return (
         <section id="main_contents">
@@ -24,7 +29,28 @@ const TestPage = () => {
 
                 </div>
 
-                <QuestionArea/>
+                {/*<QuestionArea/>*/}
+
+                <div className="test-bottom">
+                    <div className="question-container">
+                        <div className="question-number">{`Q${currentQuestion.id}`}</div>
+                        <div className="question-title">
+                            {
+                                currentQuestion['title'].split('\n').map((line, idx) => {
+                                    return (<span key={idx}>{line}<br/></span>)
+                                })
+                            }
+                        </div>
+                    </div>
+                    <div className="answers">
+                        <AnswerButton/>
+                    </div>
+                    <Bar
+                        key={`bar-item-${idx}`}
+                        percent={gauge}
+                        isSelected={true}
+                    />
+                </div>
 
             </div>
         </section>);

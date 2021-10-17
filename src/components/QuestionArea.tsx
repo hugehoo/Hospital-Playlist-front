@@ -1,4 +1,4 @@
-import {useRecoilValue, useResetRecoilState} from "recoil";
+import {useRecoilValue} from "recoil";
 import {initQuestionList, QuestionIdx} from "../store/store";
 import {useEffect} from "react";
 import AnswerButton from "./AnswerButton";
@@ -6,12 +6,12 @@ import Bar from "./Bar";
 
 const QuestionArea = () => {
     const idx = useRecoilValue(QuestionIdx)
-    const resetIdx = useResetRecoilState(QuestionIdx)
+    // const resetIdx = useResetRecoilState(QuestionIdx)
     const currentQuestion = useRecoilValue(initQuestionList(idx))
 
-    useEffect(() => {
-        resetIdx()
-    }, [resetIdx])
+    // useEffect(() => {
+    //     resetIdx()
+    // }, [resetIdx])
 
     useEffect(() => {
     }, [idx])
