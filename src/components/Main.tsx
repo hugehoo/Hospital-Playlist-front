@@ -83,9 +83,6 @@ const Main = () => {
                     </Link>
                 </div>
             </div>
-            {/*<div>*/}
-            {/*    <a href="javascript:sendLink()"><img alt="슬의" src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" /></a>*/}
-            {/*</div>*/}
         </section>
 )
 }

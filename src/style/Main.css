@@ -250,12 +250,10 @@ body {
     background-color: #55A7CE;;
     width: 290px;
     height: 80px;
-    color: black;
+    color: white;
     font: inherit;
-    fontSize: 50px;
-
-    animation-name: ping;
-
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .ping {
@@ -296,4 +294,29 @@ body {
         transform: scale(2.2);
         opacity: 0;
     }
+}
+
+.bar-graph{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    /*-webkit-transform: scaleX(width => width}%);*/
+    -webkit-transform-origin: left;
+    -webkit-transition: transform 1.5s ease;
+/**/
+/*transform: scaleX(${({width}) => width}%);*/
+/*transform-origin: left;*/
+/*transition: transform 1.5s ease;*/
+/*background: ${({isSelected}) => isSelected ? '#4da7ee' : 'rgb(255,255,255)'};*/
+/*z-index: 1;*/
+}
+.progress {
+    background-color: rgb(62, 122, 235);
+    height: 10px;
+    border-radius: 1rem;
+    -webkit-transition: 1s ease;
+    -webkit-transition-delay: 0.5s;
 }

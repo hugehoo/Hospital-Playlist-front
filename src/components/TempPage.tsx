@@ -10,7 +10,7 @@ const TempPage = () => {
     return (
 
         <section id="main_contents">
-            <div className="wrapper" id="wrapper-temp" style={{background: "#C6F8FF"}}>
+            <div className="wrapper" id="wrapper-temp" style={{background: "#C6F8FF", borderRadius: 'none'}}>
                 <div
                     style={{width: "375px"}}
                 >
