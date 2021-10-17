@@ -22,9 +22,11 @@ const TestPage = () => {
                     <div className="test-upper-title">
                         내가 율제 병원<br/> 인턴이라면?
                     </div>
-                    <img id="test-photo"
-                         src={require(`../images/${idx+1}.jpeg`).default + `?w=440&h=440&quality=75`}
-                         alt="슬의"/>
+                    <img
+                        id="test-photo"
+                        src={require(`../images/${idx + 1}.png`).default + `?w=250&h=250&quality=75`}
+                        alt="슬의"
+                    />
 
                 </div>
 
