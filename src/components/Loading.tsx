@@ -43,19 +43,19 @@ const Main = () => {
     return (
         <section id="main_contents">
             <div className="wrapper">
-                <div className="upper">
+                <div className="upper" id="upper">
                     <div className="main_title_container" style={{
                         "position": "relative",
-                        fontSize : "25px"
+                        fontSize : "40px",
+                        top:"30px"
 
                     }}>
                         보고싶다 시즌3!
                     </div>
-                    <div className="image_container" style={{
-                        "position": "relative",
-                        "top": "-20px",
-                    }}>
-                        <img className="ping" id="poster" loading="lazy" src={poster
+                    <div id="loading-img" className="image_container">
+                        <img
+                            // className="ping"
+                            id="poster" loading="lazy" src={poster
                         + getParametersForUnsplash({
                             width: '380px',
                             height: '282px',
@@ -66,10 +66,9 @@ const Main = () => {
                         />
                     </div>
                 </div>
-                <div className="bottom">
+                <div className="bottom" style={{background:"#C5F9FF"}}>
                     <div className="subtitles">
                         <div className="sub_title">#시즌3 기원</div>
-                        <div className="sub_title">#시즌3 존버</div>
                     </div>
                     <div className="result_data">
                         <div className="data_wrap" style={{fontSize: "25px"}}>

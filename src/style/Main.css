@@ -136,7 +136,9 @@ html {
         width: 414px;
         background-color: #ffffff;
     }
+
 }
+
 
 body {
     font-size: 20px;
@@ -248,7 +250,7 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 13px;
-    background-color: #55A7CE;;
+    background-color: #55A7CE;
     width: 290px;
     height: 80px;
     color: white;
@@ -256,6 +258,8 @@ body {
     font-size: 23px;
     font-weight: bold;
 }
+
+
 
 .ping {
     -webkit-animation: ping 1.8s ease-in-out infinite both;
@@ -279,6 +283,7 @@ body {
         opacity: 0;
     }
 }
+
 @keyframes ping {
     0% {
         -webkit-transform: scale(0.2);
@@ -297,7 +302,7 @@ body {
     }
 }
 
-.bar-graph{
+.bar-graph {
     position: absolute;
     left: 0;
     top: 0;
@@ -307,17 +312,10 @@ body {
     /*-webkit-transform: scaleX(width => width}%);*/
     -webkit-transform-origin: left;
     -webkit-transition: transform 1.5s ease;
-/**/
-/*transform: scaleX(${({width}) => width}%);*/
-/*transform-origin: left;*/
-/*transition: transform 1.5s ease;*/
-/*background: ${({isSelected}) => isSelected ? '#4da7ee' : 'rgb(255,255,255)'};*/
-/*z-index: 1;*/
-}
-.progress {
-    background-color: rgb(62, 122, 235);
-    height: 10px;
-    border-radius: 1rem;
-    -webkit-transition: 1s ease;
-    -webkit-transition-delay: 0.5s;
+    /**/
+    /*transform: scaleX(${({width}) => width}%);*/
+    /*transform-origin: left;*/
+    /*transition: transform 1.5s ease;*/
+    /*background: ${({isSelected}) => isSelected ? '#4da7ee' : 'rgb(255,255,255)'};*/
+    /*z-index: 1;*/
 }
