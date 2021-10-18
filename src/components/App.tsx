@@ -1,6 +1,7 @@
 import React, {Suspense, lazy} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import '../style/App.css';
+import Loading from "./Loading";
 
 const Main = lazy(() => import("./Main"))
 const TestPage = lazy(() => import("./TestPage"))
@@ -12,10 +13,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Suspense fallback={ <div className="ping">
-                    123123
-                    {/*<img src="../images/슬의.jpeg" alt=""/>*/}
-                </div>}>
+                <Suspense fallback={<Loading/>}>
                     <header className="App-header">
                         <Switch>
                             <Route path="/" component={Main} exact/>

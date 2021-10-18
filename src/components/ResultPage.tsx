@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import KakaoShareButton from "./KakaoShareButton";
 import {apiClient} from "./utils";
 import ClipboardCopy from "./ClipboardCopy";
-import ErrorPage from "./ErrorPage";
+import Loading from "./Loading";
 
 const Parsing = (CharacterId: any) => {
     const [state, setState] = useState();
@@ -43,7 +43,7 @@ const ResultPage = ({location, match}) => {
     }, [])
 
     if (!responseData) return (
-        <ErrorPage/>
+        <Loading/>
     )
 
     return (
