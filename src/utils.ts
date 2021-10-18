@@ -1,3 +1,5 @@
+import {lazy} from "react";
+
 export const MBTI_ARRAY = ["E", "I", "N", "S", "F", "T", "P", "J"]
 
 export const chooseSingleType = (obj: {[idx: string]: string}) => {
@@ -71,4 +73,13 @@ export const switchType = (mbtiType) => {
 //@ts-ignore
 export const getParametersForUnsplash = ({width, height, quality, format}) => {
     return `?w=${width}&h=${height}&q=${quality}&fm=${format}&fit=crop`
+}
+
+export const lazyWithPreload = (importFunction: any) => {
+    const Component = lazy(importFunction);
+    //@ts-ignore
+    Component.preload = importFunction;
+    // 이게 의미하는게 뭐야. Component 에 원래 preload 라는 property 가 존재하는 거야. 아니면 이 라인에서 주입해주는거야?
+    // 원래 프로퍼티는 있는데, 이 때 정의를 해주는 것 같다. 이전까진 undefined 상태.
+    return Component
 }

@@ -1,45 +1,14 @@
 import "../style/Main.css"
 import poster from "../images/슬의.jpeg"
-import {lazy, useEffect} from "react";
-import {useResetRecoilState} from "recoil";
-import {IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
 import {getParametersForUnsplash} from "../utils";
 
-const lazyWithPreload = (importFunction: any) => {
-    const Component = lazy(importFunction);
-    //@ts-ignore
-    Component.preload = importFunction;
-    // 이게 의미하는게 뭐야. Component 에 원래 preload 라는 property 가 존재하는 거야. 아니면 이 라인에서 주입해주는거야?
-    // 원래 프로퍼티는 있는데, 이 때 정의를 해주는 것 같다. 이전까진 undefined 상태.
-    return Component
-}
-const LazyImageModal = lazyWithPreload(() => import("../images/슬의.jpeg"))
 
-const Main = () => {
-    const resetIdx = useResetRecoilState(QuestionIdx)
-    const responseData = useResetRecoilState(ResponseData)
-    const error = useResetRecoilState(IsError)
-    const loading = useResetRecoilState(IsLoading)
-
-    useEffect(() => {
-        resetIdx()
-        responseData()
-        error()
-        loading()
-    }, [resetIdx, responseData, error, loading])
-
-    useEffect(() => {
-        //@ts-ignore
-        LazyImageModal.preload();
-        const img = new Image();
-        img.src = "./images/슬의.jpeg"
-
-    }, []);
+const Loading = () => {
 
     return (
         <section id="main_contents">
             <div className="wrapper">
-                <div className="upper" id="upper">
+                <div className="upper">
                     <div className="main_title_container" style={{
                         "position": "relative",
                         fontSize : "40px",
@@ -77,4 +46,4 @@ const Main = () => {
     )
 }
 
-export default Main;
+export default Loading;

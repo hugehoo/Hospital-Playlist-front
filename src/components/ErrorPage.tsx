@@ -1,6 +1,7 @@
 import "../style/Main.css"
 import {Link} from "react-router-dom";
-
+import {getParametersForUnsplash} from "../utils";
+import poster from "../images/슬의.jpeg"
 
 const ErrorPage = () => {
     return (
@@ -17,15 +18,15 @@ const ErrorPage = () => {
                         "position": "relative",
                         "top": "-20px",
                     }}>
-                        {/*<img id="poster" loading="lazy" src={poster*/}
-                        {/*+ getParametersForUnsplash({*/}
-                        {/*    width: '380px',*/}
-                        {/*    height: '282px',*/}
-                        {/*    quality: 80,*/}
-                        {/*    format: 'png'*/}
-                        {/*})} alt="슬의"*/}
-                        {/*     style={{"width": "380px", "height": "282px"}}*/}
-                        {/*/>*/}
+                        <img id="poster" loading="lazy" src={poster
+                        + getParametersForUnsplash({
+                            width: '380px',
+                            height: '282px',
+                            quality: 80,
+                            format: 'png'
+                        })} alt="슬의"
+                             style={{"width": "380px", "height": "282px"}}
+                        />
                     </div>
                 </div>
                 <div className="bottom">
@@ -39,7 +40,7 @@ const ErrorPage = () => {
                         </div>
                     </div>
                     <Link to={"/"}>
-                        <button className="start-button" type="button">시작 페이지로</button>
+                        <button className="start-button" type="button">돌아가</button>
                     </Link>
                 </div>
             </div>

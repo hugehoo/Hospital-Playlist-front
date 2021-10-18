@@ -30,8 +30,6 @@ const TestPage = () => {
 
                 </div>
 
-                {/*<QuestionArea/>*/}
-
                 <div className="test-bottom">
                     <div className="question-container">
                         <div className="question-number">{`Q${currentQuestion.id}`}</div>

@@ -13,7 +13,7 @@ const TempPage = () => {
         <section id="main_contents">
             <div className="wrapper" id="wrapper-temp" style={{background: "#C6F8FF", borderRadius: 'none'}}>
                 <div
-                    style={{width: "375px"}}
+                    // style={{width: "375px"}}
                 >
                     <img id="poster" loading="lazy" src={poster
                     + getParametersForUnsplash({
