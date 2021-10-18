@@ -1,9 +1,7 @@
-import {Link} from "react-router-dom";
 import {initQuestionList, QuestionIdx, ResultObj} from "../store/store";
-import {useRecoilState, useRecoilValue, useResetRecoilState} from "recoil";
+import {useRecoilState, useRecoilValue} from "recoil";
 
 const AnswerButton = () => {
-    const resetIdx = useResetRecoilState(QuestionIdx)
     const [idx, setIdx] = useRecoilState(QuestionIdx)
     const currentQuestion = useRecoilValue(initQuestionList(idx))
     const [state, setState] = useRecoilState(ResultObj)
@@ -20,47 +18,22 @@ const AnswerButton = () => {
                 12: answerType
             }
             setState(resultObj)
-            resetIdx()
         }
     }
 
     return (
         <>
-            {
-                idx < 11 ? (
-                    <>
-                        <button className="answers_wrap"
-                                onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}
-                        >
-                            {currentQuestion['answerA']}
-                        </button>
+            <button className="answers_wrap"
+                    onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}
+            >
+                {currentQuestion['answerA']}
+            </button>
 
-                        <button className="answers_wrap"
-                                onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}
-                        >
-                            {currentQuestion['answerB']}
-                        </button>
-                    </>
-                ) : (
-                    <>
-                        <Link to="/temppage" style={{"textDecoration": "none", "color": "black"}}>
-                            <button className="answers_wrap"
-                                    onClick={(e) => ToNextstep(e, currentQuestion['answerAType'])}
-                            >
-                                {currentQuestion['answerA']}
-                            </button>
-                        </Link>
-
-                        <Link to="/temppage" style={{"textDecoration": "none", "color": "black"}}>
-                            <button className="answers_wrap"
-                                    onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}
-                            >
-                                {currentQuestion['answerB']}
-                            </button>
-                        </Link>
-                    </>
-                )
-            }
+            <button className="answers_wrap"
+                    onClick={(e) => ToNextstep(e, currentQuestion['answerBType'])}
+            >
+                {currentQuestion['answerB']}
+            </button>
         </>
     )
 }

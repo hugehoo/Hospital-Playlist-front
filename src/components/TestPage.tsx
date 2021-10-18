@@ -4,6 +4,7 @@ import {initQuestionList, QuestionIdx} from "../store/store";
 import {useEffect} from "react";
 import AnswerButton from "./AnswerButton";
 import Bar from "./Bar";
+import TempPage from "./TempPage";
 
 const TestPage = () => {
     const idx = useRecoilValue(QuestionIdx)
@@ -14,7 +15,9 @@ const TestPage = () => {
         resetIdx()
     }, [resetIdx])
     const gauge = Math.floor(idx / 11 * 100)
-
+    if (idx === 12) {
+        return <TempPage/>
+    }
     return (
         <section id="main_contents">
             <div className="wrapper">

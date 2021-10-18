@@ -7,7 +7,6 @@ const Main = lazy(() => import("./Main"))
 const TestPage = lazy(() => import("./TestPage"))
 const ResultPage = lazy(() => import("./ResultPage"))
 const ErrorPage = lazy(() => import("./ErrorPage"))
-const TempPage = lazy(() => import("./TempPage"))
 
 function App() {
     return (
@@ -18,7 +17,6 @@ function App() {
                         <Switch>
                             <Route path="/" component={Main} exact/>
                             <Route path="/testpage" component={TestPage}/>
-                            <Route path="/temppage" component={TempPage}/>
                             <Route path="/resultpage/:id" component={ResultPage}/>
                             {/*404*/}
                             <Route component={ErrorPage}/>
