@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {lazy, useEffect} from "react";
 import {useResetRecoilState} from "recoil";
 import {IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
+import {getParametersForUnsplash} from "../utils";
 
 const lazyWithPreload = (importFunction: any) => {
     const Component = lazy(importFunction);
@@ -28,10 +29,7 @@ const Main = () => {
         loading()
     }, [resetIdx, responseData, error, loading])
 
-    //@ts-ignore
-    const getParametersForUnsplash = ({width, height, quality, format}) => {
-        return `?w=${width}&h=${height}&q=${quality}&fm=${format}&fit=crop`
-    }
+
 
     useEffect(() => {
         //@ts-ignore

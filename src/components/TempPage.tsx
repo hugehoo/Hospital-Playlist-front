@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import {useRecoilValue} from "recoil";
 import {ResultObj} from "../store/store";
-import {chooseSingleType, switchType} from "../utils";
+import {chooseSingleType, getParametersForUnsplash, switchType} from "../utils";
 import poster from "../images/슬의.jpeg";
 
 const TempPage = () => {
@@ -15,11 +15,17 @@ const TempPage = () => {
                 <div
                     style={{width: "375px"}}
                 >
-                    <img id="poster" loading="lazy" src={poster} alt="슬의"
-                         style={{"width": "380px", "height": "282px", marginBottom:"20px"}}
+                    <img id="poster" loading="lazy" src={poster
+                    + getParametersForUnsplash({
+                        width: '380px',
+                        height: '282px',
+                        quality: 80,
+                        format: 'png'
+                    })} alt="슬의"
+                         style={{"width": "380px", "height": "282px", marginBottom: "20px"}}
                     />
                     <Link to={`/resultpage/${resultId}`} style={{"textDecoration": "none", "color": "black"}}>
-                        <button id="temp-button"> 나와 닮은 캐릭터는? </button>
+                        <button id="temp-button"> 나와 닮은 캐릭터는?</button>
                     </Link>
                 </div>
             </div>
