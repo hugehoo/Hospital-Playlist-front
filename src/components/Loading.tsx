@@ -1,6 +1,5 @@
 import "../style/Main.css"
 import poster from "../images/슬의.jpeg"
-import {Link} from "react-router-dom";
 import {lazy, useEffect} from "react";
 import {useResetRecoilState} from "recoil";
 import {IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
