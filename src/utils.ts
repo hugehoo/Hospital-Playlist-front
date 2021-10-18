@@ -52,6 +52,16 @@ export const switchType = (mbtiType) => {
             return 10;
         case "ENTJ":
             return 11;
+        case "ENTP":
+            return 8;
+        case "ESTP":
+            return 7;
+        case "ISTP":
+            return 2;
+        case "ISTJ":
+            return 5;
+        case "ENFJ":
+            return 1;
         default:
             return 1;
     }
