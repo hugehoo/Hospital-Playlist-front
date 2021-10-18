@@ -4,18 +4,19 @@ import {useEffect, useState} from "react";
 import KakaoShareButton from "./KakaoShareButton";
 import {apiClient} from "./utils";
 import ClipboardCopy from "./ClipboardCopy";
+import ErrorPage from "./ErrorPage";
 
 const Parsing = (CharacterId: any) => {
     const [state, setState] = useState();
     useEffect((): any => {
         const CallApi = async (resultId: string) => {
             try {
-                const result = await apiClient.get(`/result?id=${resultId}`)
+                const result = await apiClient
+                    .get(`/result/${resultId}`)
+
                 const data = await result.data;
                 if (data.resultCode === 200) {
                     setState(data.resultData);
-                } else {
-                    console.log("error")
                 }
             } catch (e) {
                 console.log("exception")
@@ -41,9 +42,10 @@ const ResultPage = ({location, match}) => {
         }
     }, [])
 
-    if (!responseData) return <div className="ping">
-        <img src="../images/슬의.jpeg" alt=""/>
-    </div>
+    if (!responseData) return (
+        <ErrorPage/>
+    )
+
     return (
         <section id="result_contents">
             <div className="wrapper">
@@ -58,7 +60,6 @@ const ResultPage = ({location, match}) => {
                         "position": "relative",
                         "top": "-20px",
                     }}>
-                        {/* 결과 이미지*/}
                         <img
                             id="poster"
                             src={require(`../images/${responseData['id']}.png`).default + `?w=440&h=440&quality=75`}
@@ -68,7 +69,6 @@ const ResultPage = ({location, match}) => {
                     </div>
                     <div className="explanation_container">
                         <div className="explanation_title">
-                            {/*{responseData['famous_line']}*/}
                             {
                                 //@ts-ignore
                                 responseData['famous_line'].split('\\n').map((line, idx) => {

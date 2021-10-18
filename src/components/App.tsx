@@ -13,7 +13,8 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <Suspense fallback={ <div className="ping">
-                    <img src="../images/슬의.jpeg" alt=""/>
+                    123123
+                    {/*<img src="../images/슬의.jpeg" alt=""/>*/}
                 </div>}>
                     <header className="App-header">
                         <Switch>
@@ -21,6 +22,7 @@ function App() {
                             <Route path="/testpage" component={TestPage}/>
                             <Route path="/temppage" component={TempPage}/>
                             <Route path="/resultpage/:id" component={ResultPage}/>
+                            {/*404*/}
                             <Route component={ErrorPage}/>
                         </Switch>
                     </header>
