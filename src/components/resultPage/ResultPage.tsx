@@ -1,12 +1,12 @@
-import "../style/Result.css"
+import "../../style/Result.css"
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import KakaoShareButton from "./KakaoShareButton";
-import {apiClient} from "./utils";
+import {apiClient} from "../../utils";
 import ClipboardCopy from "./ClipboardCopy";
-import Loading from "./Loading";
+import Loading from "../Loading";
 
-const Parsing = (CharacterId: any) => {
+const Parsing = (CharacterId: string) => {
     const [state, setState] = useState();
     useEffect((): any => {
         const CallApi = async (resultId: string) => {
@@ -27,8 +27,16 @@ const Parsing = (CharacterId: any) => {
     if (!state) return null;
     return state
 }
+
+type ResultProps = {
+    match: {
+        params : {
+            id : string
+        }
+    }
+}
 //@ts-ignore
-const ResultPage = ({location, match}) => {
+const ResultPage = ({match}:ResultProps) => {
     const CharacterId = match.params.id;
     const responseData = Parsing(CharacterId)
 
@@ -62,7 +70,7 @@ const ResultPage = ({location, match}) => {
                     }}>
                         <img
                             id="poster"
-                            src={require(`../images/${responseData['id']}.png`).default + `?w=440&h=440&quality=75`}
+                            src={require(`../../images/${responseData['id']}.png`).default + `?w=440&h=440&quality=75`}
                             alt={responseData['image']}
                             style={{"width": "220px", "height": "220px"}}
                         />

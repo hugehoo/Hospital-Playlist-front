@@ -3,9 +3,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import '../style/App.css';
 import Loading from "./Loading";
 
-const Main = lazy(() => import("./Main"))
-const TestPage = lazy(() => import("./TestPage"))
-const ResultPage = lazy(() => import("./ResultPage"))
+const Main = lazy(() => import("./mainPage/Main"))
+const TestPage = lazy(() => import("./testPage/TestPage"))
+const ResultPage = lazy(() => import("./resultPage/ResultPage"))
 const ErrorPage = lazy(() => import("./ErrorPage"))
 
 function App() {

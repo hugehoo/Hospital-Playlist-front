@@ -36,11 +36,6 @@ export const IsError = atom<boolean>({
     "default" : false
 })
 
-export const QuestionList = atom<IQuestion[]>({
-    "key": "TestList",
-    "default": [],
-})
-
 
 // atomfamily의 2번째 타입에 number 써주니 SerializableParam 타입 문제 해결
 export const initQuestionList = atomFamily<IQuestion, number>({

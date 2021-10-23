@@ -1,10 +1,10 @@
-import "../style/Testpage.css"
+import "../../style/Testpage.css"
 import {useRecoilValue, useResetRecoilState} from "recoil";
-import {initQuestionList, QuestionIdx} from "../store/store";
+import {initQuestionList, QuestionIdx} from "../../store/store";
 import {useEffect} from "react";
 import AnswerButton from "./AnswerButton";
 import Bar from "./Bar";
-import TempPage from "./TempPage";
+import TempPage from "../tempPage/TempPage";
 
 const TestPage = () => {
     const idx = useRecoilValue(QuestionIdx)
@@ -27,7 +27,7 @@ const TestPage = () => {
                     </div>
                     <img
                         id="test-photo"
-                        src={require(`../images/${idx + 1}.png`).default + `?w=250&h=250&quality=75`}
+                        src={require(`../../images/${idx + 1}.png`).default + `?w=250&h=250&quality=75`}
                         alt="슬의"
                     />
 

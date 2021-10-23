@@ -1,4 +1,4 @@
-import {initQuestionList, QuestionIdx, ResultObj} from "../store/store";
+import {initQuestionList, QuestionIdx, ResultObj} from "../../store/store";
 import {useRecoilState, useRecoilValue} from "recoil";
 
 const AnswerButton = () => {

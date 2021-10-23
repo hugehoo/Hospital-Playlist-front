@@ -1,12 +1,12 @@
-import "../style/Main.css"
-import poster from "../images/슬의.jpeg"
+import "../../style/Main.css"
+import poster from "../../images/슬의.jpeg"
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
 import {useResetRecoilState} from "recoil";
-import {IsError, IsLoading, QuestionIdx, ResponseData} from "../store/store";
-import {getParametersForUnsplash, lazyWithPreload} from "../utils";
+import {IsError, IsLoading, QuestionIdx, ResponseData} from "../../store/store";
+import {getParametersForUnsplash, lazyWithPreload} from "../../utils";
 
-const LazyImageModal = lazyWithPreload(() => import("../images/슬의.jpeg"))
+const LazyImageModal = lazyWithPreload(() => import("../../images/슬의.jpeg"))
 
 const Main = () => {
     const resetIdx = useResetRecoilState(QuestionIdx)

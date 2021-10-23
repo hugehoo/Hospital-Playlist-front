@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom";
 import {useRecoilValue} from "recoil";
-import {ResultObj} from "../store/store";
-import {chooseSingleType, getParametersForUnsplash, switchType} from "../utils";
-import poster from "../images/슬의.jpeg";
+import {ResultObj} from "../../store/store";
+import {chooseSingleType, getParametersForUnsplash, switchType} from "../../utils";
+import poster from "../../images/슬의.jpeg";
 
 const TempPage = () => {
     const state = useRecoilValue(ResultObj)

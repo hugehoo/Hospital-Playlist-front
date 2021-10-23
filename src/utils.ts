@@ -1,4 +1,12 @@
 import {lazy} from "react";
+import axios from "axios";
+import {SERVER} from "./config";
+
+
+export const apiClient = axios.create({
+    baseURL: `${SERVER}`,
+})
+
 
 export const MBTI_ARRAY = ["E", "I", "N", "S", "F", "T", "P", "J"]
 
