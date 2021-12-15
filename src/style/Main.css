@@ -1,173 +1,134 @@
 
-html {
+html{
     width: 100%;
     height: 100vh;
 }
 
+
+
+/*@font-face {*/
+/*    font-family: '210 나무굴림R';*/
+/*    src: url('./fonts/210 나무굴림R.ttf') format('truetype');*/
+/*}*/
+
 @font-face {
     font-family: '210 라임R';
-    src: local('fonts/210 라임R'),
-    url('./fonts/210 라임R.woff2') format('woff2');
+    src: url('./fonts/210 라임R.ttf') format('truetype');
 }
-
 @keyframes rotate {
-    0% {
+    0%{
         transform: translateY(0);
-    }
-    25% {
-        transform: translateY(-20%);
-    }
-    50% {
-        transform: translateY(-40%);
-    }
-    75% {
-        transform: translateY(-60%);
-    }
-    100% {
-        transform: translateY(-80%);
+    }25%{
+         transform: translateY(-20%);
+     }50%{
+          transform: translateY(-40%);
+      }75%{
+           transform: translateY(-60%);
+       }100%{
+            transform: translateY(-80%);
+        }
+}
+
+@media ( max-width: 900px ) {
+    #main_contents .wrapper {
+        /*background-color: rebeccapurple;*/
+        border: none !important; /*이게 있어야하구나*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*width: 100%;*/
+        /*height: 95%;*/
+        /*max-width: 500px;*/
     }
 }
 
+body{
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-family: "210 나무굴림R",'210 라임R' ,sans-serif;
+
+}
+
+#main_contents {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /*margin-top: 3rem;*/
+    /*em, rem 차이 구분*/
+}
 
 #main_contents .wrapper {
     border: 1px solid black;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    /*width: 100%;*/
+
+    /*xd참고 규격*/
     width: 429px;
     height: 926px;
+
     margin: 3rem 0 3rem 0;
     max-width: 500px;
 }
-
-.upper {
+.upper{
     height: 519px;
     background-color: #C5F9FF;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0 ;
 }
 
-
-.main_title_container {
-    text-align: center;
-    margin: 116px 0px 0px 0px;
-    color: black;
-    font-size: 47px;
-    font-weight: bolder;
-    line-height: 70px;
-    font-family: '210 라임R', sans-serif;
-
-}
-
-.result_data .data_wrap {
-    width: 323px;
-    height: 17px;
-    font-size: 17px;
-    color: black;
-    font-weight: bold;
-}
-
-.bottom {
-    height: 407px;
-    width: 429px;
-    background-color: #ffffff;
-    border-radius: 0 0 15px 15px;
-}
-
-.main_title_above {
+.main_title_above{
     display: flex;
     justify-content: flex-end;
     padding-right: 70px;
     color: black;
+    font-size: 70px;
     font-weight: bolder;
-    position: absolute;
-    top: -10px;
-    right: -38px;
-    font-size: 40px;
 }
 
-
-/*900보다 작으면 해당 내부 코드 실행*/
-@media ( max-width: 900px ) {
-    #main_contents .wrapper {
-        border: none !important; /*이게 있어야하구나*/
-        /*border-radius: 0;*/
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-    }
-
-    .upper {
-        height: 519px;
-        /*background-color: #C5F9FF;*/
-        border-radius: 0 0 0 0;
-    }
-
-    .main_title_container {
-        text-align: center;
-        margin: 116px 0px 0px 0px;
-        color: black;
-        font-size: 38px;
-        font-weight: bolder;
-        line-height: 70px;
-        font-family: '210 라임R', sans-serif;
-    }
-
-    .main_title_above {
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 70px;
-        color: black;
-        font-weight: bolder;
-        position: absolute;
-        top: -10px;
-        right: -20px;
-        font-size: 30px;
-    }
-
-
-    .result_data .data_wrap {
-        font-size: 15px;
-    }
-
-    .bottom {
-        height: 407px;
-        width: 414px;
-        background-color: #ffffff;
-    }
+.main_title_container {
+    text-align: center;
+    margin: 116px 0px 0px 0px;
+    /*height: 250px;*/
+    color: black;
+    font-size: 55px;
+    font-weight: bolder;
+    line-height: 70px;
+    font-family: '210 라임R' ,sans-serif;
 
 }
-
-
-body {
-    font-size: 20px;
-    width: 100%;
-    height: 100%;
-    color: #000;
-    font-family: "210 나무굴림R", '210 라임R', sans-serif;
-
-}
-
-.subtitles {
+.subtitles{
     margin-top: 28px;
     margin-bottom: 40px;
+    /*background-color: #7f47dd;*/
+    /*width: 323px;*/
     height: 2em;
+    /*line-height: 2em;*/
 }
-
 .sub_title {
     text-align: center;
     font-size: 26px;
     font-weight: bold;
     color: #274D6E;
 }
+.photo{
+    margin-top:30px;
+    /*height: 100%;*/
 
-.photo {
-    margin-top: 30px;
+}
+#poster{
+    width: 400px;
+    /*height: 100%;*/
 }
 
-#poster {
-    width: 400px;
+.bottom{
+    height: 407px;
+    width: 100%;
+    background-color: #ffffff;
+    /*background-color: yellowgreen;*/
+    border-radius: 0 0 15px 15px;
 }
 
 .intro {
@@ -190,7 +151,7 @@ body {
     overflow: hidden;
 }
 
-.type_list {
+.type_list{
     animation: rotate 7s infinite;
 }
 
@@ -201,18 +162,16 @@ body {
 
 .start-button {
     width: 323px;
-    height: 68px;
-    background-color: #55A7CE;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    font-family: '210 나무굴림R', sans-serif;
-    border-radius: 9px;
-    border: none;
-    margin-top: 30px;
+    height: 75px;
+    border-radius: 15px;
+    background-color: #79EBF8;
+    border: 3px solid #5ECFDC;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0 0 20px 0;
 }
-
-.start {
+.start{
     font-weight: bold;
     font-size: 40px;
     padding: 10px 0 10px 0;
@@ -232,90 +191,16 @@ body {
     margin-bottom: 10px;
 }
 
-
-.result_data li {
-    font-size: 15px;
-    padding-bottom: 10px
-}
-
-#wrapper-temp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 375px;
-    font-family: "210 나무굴림R";
-}
-
-#temp-button {
-    border: none;
-    cursor: pointer;
-    border-radius: 13px;
-    background-color: #55A7CE;
-    width: 290px;
-    height: 80px;
-    color: white;
-    font: inherit;
-    font-size: 23px;
+.result_data .data_wrap {
+    width: 323px;
+    height: 17px;
+    font-size: 17px;
+    color: black;
     font-weight: bold;
+    /*background-color: #2b2929;*/
 }
 
-
-
-.ping {
-    -webkit-animation: ping 1.8s ease-in-out infinite both;
-    animation: ping 1.8s ease-in-out infinite both;
-}
-
-@-webkit-keyframes ping {
-    0% {
-        -webkit-transform: scale(0.2);
-        transform: scale(0.2);
-        opacity: 0.8;
-    }
-    80% {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: scale(2.2);
-        transform: scale(2.2);
-        opacity: 0;
-    }
-}
-
-@keyframes ping {
-    0% {
-        -webkit-transform: scale(0.2);
-        transform: scale(0.2);
-        opacity: 0.8;
-    }
-    80% {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: scale(2.2);
-        transform: scale(2.2);
-        opacity: 0;
-    }
-}
-
-.bar-graph {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-
-    /*-webkit-transform: scaleX(width => width}%);*/
-    -webkit-transform-origin: left;
-    -webkit-transition: transform 1.5s ease;
-    /**/
-    /*transform: scaleX(${({width}) => width}%);*/
-    /*transform-origin: left;*/
-    /*transition: transform 1.5s ease;*/
-    /*background: ${({isSelected}) => isSelected ? '#4da7ee' : 'rgb(255,255,255)'};*/
-    /*z-index: 1;*/
+.result_data li{
+    font-size:15px;
+    padding-bottom: 10px
 }

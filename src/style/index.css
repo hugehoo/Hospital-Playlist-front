@@ -11,12 +11,11 @@ body {
 
 /*@font-face {*/
 /*  font-family: '210 라임R';*/
-/*  src: url('./fonts/210 라임R.woff2') format('truetype');*/
+/*  src: url('./fonts/210 라임R.ttf') format('truetype');*/
 /*}*/
 @font-face {
     font-family: '210 나무굴림R';
-    src: local('fonts/210 나무굴림R'),
-    url('fonts/210 나무굴림R.woff2') format('woff2');
+    src: url('./fonts/210 나무굴림R.ttf') format('truetype');
 }
 
 code {

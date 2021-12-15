@@ -1,39 +1,11 @@
-import {atom, atomFamily} from "recoil";
+import {atom, atomFamily, selector} from "recoil";
+import axios from "axios";
 import contents from '../contents.json';
-import {recoilPersist} from "recoil-persist";
 
 
-const {persistAtom} = recoilPersist();
-
-interface IResponseData {
-    id: number
-    explanation: string
-    image: string
-    mbti: string
-    title: string
-    famous_line: string
-}
-export const ResponseData = atom<IResponseData>({
-    "key": "ResponseData",
-    "default": {
-        id: 0,
-        explanation: '',
-        image: '',
-        mbti: '',
-        title: '',
-        famous_line:''
-    },
-    effects_UNSTABLE: [persistAtom]
-})
-
-export const IsLoading = atom<boolean>({
-    "key": "IsLoading",
-    "default" : false
-})
-
-export const IsError = atom<boolean>({
-    "key": "IsError",
-    "default" : false
+export const QuestionList = atom<IQuestion[]>({
+    "key": "TestList",
+    "default": [],
 })
 
 
@@ -77,31 +49,15 @@ export interface IAnswers {
     "12": string,
 }
 
-export const ResultObj = atom<IAnswers>({
-    key: 'ResultObj',
-    default: {
-        "1": '',
-        "2": '',
-        "3": '',
-        "4": '',
-        "5": '',
-        "6": '',
-        "7": '',
-        "8": '',
-        "9": '',
-        "10": '',
-        "11": '',
-        "12": '',
-    }
+export const currentQuestion = selector({
+    key: "currentQuestion",
+    get: async ({get}) => {
+        // const questions = get(QuestionList)
+        const currentIdx = get(QuestionIdx)
+
+        const response = await axios.get("http://localhost:4000/hospital") // http 쓰지 않으면 cors 에러 난다.
+        const data = response.data
+        return data.filter((question: { id: number; }) => question.id === currentIdx)[0]
+    },
 })
 
-// export const currentQuestion = selector({
-//     key: "currentQuestion",
-//     get: async ({get}) => {
-//         const questions = get(QuestionList)
-        // const currentIdx = get(QuestionIdx)
-        // const response = await axios.get("http://localhost:4000/hospital") // http 쓰지 않으면 cors 에러 난다.
-        // const data = response.data
-        // return data.filter((question: { id: number; }) => question.id === currentIdx)[0]
-    // },
-// })
